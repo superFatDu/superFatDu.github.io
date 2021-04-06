@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cheng5.du">
+    
+    <title>
+        
+            Linux基础知识 |
+        
+        cheng5.du
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#4284f4","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","article_img_align":"left","left_side_width":"260px","content_max_width":"1100px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"嘿，好久不见！人生海海，来日方长，我是杜木土。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                cheng5.du
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Linux基础知识</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">cheng5.du</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-10-28 12:05:45
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%90%8E%E7%AB%AF%E8%BF%90%E7%BB%B4/">后端运维</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="Linux基础知识"><a href="#Linux基础知识" class="headerlink" title="Linux基础知识"></a>Linux基础知识</h1><p>Linux，全称GNU/Linux，是一种免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年10月5日首次发布，它主要受到Minix和Unix思想的启发，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。Linux有上百种不同的发行版，如基于社区开发的debian、archlinux，和基于商业开发的Red Hat Enterprise Linux、SUSE、oracle linux等。</p>
+<h2 id="1-连接服务器"><a href="#1-连接服务器" class="headerlink" title="1.连接服务器"></a>1.连接服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 1. Xshell/SecureCRT……连接</span><br><span class="line">输入用户名/密码</span><br><span class="line"></span><br><span class="line">// 2. 命令行连接</span><br><span class="line">// -p 后面接端口</span><br><span class="line">// PORT：端口号（默认22）</span><br><span class="line">// serverIP：服务器实例IP</span><br><span class="line">// ~ 表示home目录</span><br><span class="line"></span><br><span class="line">// 连接</span><br><span class="line">$ ssh -p PORT root@serverIP </span><br><span class="line">$ ssh -p 22 root@140.143.236.***</span><br><span class="line"></span><br><span class="line">// 输入密码</span><br><span class="line">$ root@serverIP<span class="string">&#x27;s password:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 连接成功</span></span><br><span class="line"><span class="string">$ [root@VM-0-15-centos ~]#</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-显示服务器发行版本信息"><a href="#2-显示服务器发行版本信息" class="headerlink" title="2.显示服务器发行版本信息"></a>2.显示服务器发行版本信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 示例</span><br><span class="line">$ LSB Version:    :core-4.1-amd64:core-4.1-noarch</span><br><span class="line">$ Distributor ID: CentOS</span><br><span class="line">$ Description:    CentOS Linux release 7.7.1908 (Core)</span><br><span class="line">$ Release:        7.7.1908</span><br><span class="line">$ Codename:       Core</span><br><span class="line"></span><br><span class="line">// LSB：Linux Standard Base</span><br><span class="line">$ lsb_release -a</span><br><span class="line"></span><br><span class="line">// 如果-bash: lsb_release: <span class="built_in">command</span> not found =&gt; 安装即可</span><br><span class="line">$ yum -y install redhat-lsb-core-4.1-27.el7.centos.1.x86_64</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-服务器内核信息"><a href="#3-服务器内核信息" class="headerlink" title="3.服务器内核信息"></a>3.服务器内核信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">uname: unix name</span><br><span class="line"></span><br><span class="line">// 口令</span><br><span class="line">$ uname -a</span><br><span class="line"></span><br><span class="line">// 结果</span><br><span class="line">$ Linux VM-0-15-centos 3.10.0-1062.18.1.el7.x86_64 <span class="comment">#1 SMP Tue Mar 17 23:49:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-磁盘空间"><a href="#4-磁盘空间" class="headerlink" title="4.磁盘空间"></a>4.磁盘空间</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">df: disk free</span><br><span class="line"></span><br><span class="line">// 查看口令</span><br><span class="line">$ df</span><br><span class="line"></span><br><span class="line">// 结果</span><br><span class="line">Filesystem     1K-blocks     Used Available Use% Mounted on</span><br><span class="line">devtmpfs          930176        0    930176   0% /dev</span><br><span class="line">tmpfs             941096       24    941072   1% /dev/shm</span><br><span class="line">tmpfs             941096      556    940540   1% /run</span><br><span class="line">tmpfs             941096        0    941096   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1       51473868 12049648  37226976  25% /</span><br><span class="line">overlay         51473868 12049648  37226976  25% /var/lib/docker/overlay2/77da3edd538fa0654c1bdf44244a13ec55e901458aedcff550bff08ef2beda32/merged</span><br><span class="line">overlay         51473868 12049648  37226976  25% /var/lib/docker/overlay2/7135b642c5bb06ea053d90c0ddd70c9339705e31b2fb5403fae2fddb097bce0e/merged</span><br><span class="line">tmpfs             188220        0    188220   0% /run/user/0</span><br><span class="line"></span><br><span class="line">// 显示文件系统的形式，并以人类可读的形式输出</span><br><span class="line">$ df -Th</span><br><span class="line"></span><br><span class="line">// 结果</span><br><span class="line">Filesystem     Type      Size  Used Avail Use% Mounted on</span><br><span class="line">devtmpfs       devtmpfs  909M     0  909M   0% /dev</span><br><span class="line">tmpfs          tmpfs     920M   24K  920M   1% /dev/shm</span><br><span class="line">tmpfs          tmpfs     920M  556K  919M   1% /run</span><br><span class="line">tmpfs          tmpfs     920M     0  920M   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1      ext4       50G   12G   36G  25% /</span><br><span class="line">overlay        overlay    50G   12G   36G  25% /var/lib/docker/overlay2/77da3edd538fa0654c1bdf44244a13ec55e901458aedcff550bff08ef2beda32/merged</span><br><span class="line">overlay        overlay    50G   12G   36G  25% /var/lib/docker/overlay2/7135b642c5bb06ea053d90c0ddd70c9339705e31b2fb5403fae2fddb097bce0e/merged</span><br><span class="line">tmpfs          tmpfs     184M     0  184M   0% /run/user/0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-目录结构"><a href="#5-目录结构" class="headerlink" title="5.目录结构"></a>5.目录结构</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// 1.带隐藏目录</span><br><span class="line">$ ls -la</span><br><span class="line"></span><br><span class="line">// 2.不带隐藏目录</span><br><span class="line">$ ll</span><br><span class="line"></span><br><span class="line">// 3.不带隐藏目录结果</span><br><span class="line">total 64</span><br><span class="line">lrwxrwxrwx.   1 root root     7 Mar  7  2019 bin -&gt; usr/bin</span><br><span class="line">dr-xr-xr-x.   5 root root  4096 Sep 10 15:24 boot</span><br><span class="line">drwxr-xr-x    2 root root  4096 Nov  5  2019 data</span><br><span class="line">drwxr-xr-x   19 root root  3000 Sep 10 15:23 dev</span><br><span class="line">drwxr-xr-x.  90 root root  4096 Nov  5 15:34 etc</span><br><span class="line">drwxr-xr-x.   2 root root  4096 Apr 11  2018 home</span><br><span class="line">lrwxrwxrwx.   1 root root     7 Mar  7  2019 lib -&gt; usr/lib</span><br><span class="line">lrwxrwxrwx.   1 root root     9 Mar  7  2019 lib64 -&gt; usr/lib64</span><br><span class="line">drwx------.   2 root root 16384 Mar  7  2019 lost+found</span><br><span class="line">drwxr-xr-x.   2 root root  4096 Apr 11  2018 media</span><br><span class="line">drwxr-xr-x.   2 root root  4096 Apr 11  2018 mnt</span><br><span class="line">drwxr-xr-x.   4 root root  4096 Sep 10 15:41 opt</span><br><span class="line">dr-xr-xr-x  101 root root     0 Sep 10 15:23 proc</span><br><span class="line">dr-xr-x---.   8 root root  4096 Sep 10 16:43 root</span><br><span class="line">drwxr-xr-x   27 root root  1000 Nov  5 15:34 run</span><br><span class="line">lrwxrwxrwx.   1 root root     8 Mar  7  2019 sbin -&gt; usr/sbin</span><br><span class="line">drwxr-xr-x.   2 root root  4096 Apr 11  2018 srv</span><br><span class="line">dr-xr-xr-x   13 root root     0 Nov  5 16:02 sys</span><br><span class="line">drwxrwxrwt.   9 root root  4096 Nov  5 15:34 tmp</span><br><span class="line">drwxr-xr-x.  13 root root  4096 Mar  7  2019 usr</span><br><span class="line">drwxr-xr-x.  19 root root  4096 Mar  7  2019 var</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/boot</td>
+<td>系统启动相关的文件，如内核、initrd，以及grub（BootLoader）</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>所有的系统管理所需要的配置文件和子目录</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>用户的家目录，每一个用户的家目录通常默认为/home/USERNAME</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库</td>
+</tr>
+<tr>
+<td>/lost+found</td>
+<td>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件</td>
+</tr>
+<tr>
+<td>/media</td>
+<td>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上，然后进入该目录就可以查看光驱里的内容了</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录</td>
+</tr>
+<tr>
+<td>/proc</td>
+<td>Processes(进程) 的缩写，/proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>该目录为系统管理员，也称作超级权限者的用户主目录</td>
+</tr>
+<tr>
+<td>/run</td>
+<td>是一个临时文件系统，存储系统启动以来的信息</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序</td>
+</tr>
+<tr>
+<td>/srv</td>
+<td>该目录存放一些服务启动之后需要提取的数据</td>
+</tr>
+<tr>
+<td>/sys</td>
+<td>当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>temporary(临时) 的缩写这个目录是用来存放一些临时文件的</td>
+</tr>
+<tr>
+<td>/usr</td>
+<td>unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录</td>
+</tr>
+<tr>
+<td>/usr/bin</td>
+<td>系统用户使用的应用程序</td>
+</tr>
+<tr>
+<td>/usr/sbin</td>
+<td>超级用户使用的比较高级的管理程序和系统守护程序</td>
+</tr>
+<tr>
+<td>/usr/src</td>
+<td>内核源代码默认的放置目录</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件</td>
+</tr>
+</tbody></table>
+<h2 id="6-CPU-内存-进程"><a href="#6-CPU-内存-进程" class="headerlink" title="6.CPU/内存/进程"></a>6.CPU/内存/进程</h2><p>Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ top</span><br><span class="line"></span><br><span class="line">  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND</span><br><span class="line"> 8779 root      20   0  642148  12120  10536 S  0.7  0.6  72:23.76 YDEdr</span><br><span class="line">17036 polkitd   20   0 1274480 350136    648 S  0.7 18.6 627:58.60 mysqld</span><br><span class="line">13273 root      20   0  573444  25984   1428 S  0.3  1.4  33:23.64 containerd</span><br><span class="line">21596 root      20   0       0      0      0 S  0.3  0.0   0:00.01 kworker/0:0</span><br><span class="line">28259 root      20   0  160604   9152   1772 S  0.3  0.5  54:06.52 barad_agent</span><br><span class="line">28260 root      20   0  611276  13504   1984 S  0.3  0.7 247:08.11 barad_agent</span><br><span class="line">    1 root      20   0  125456   3676   2292 S  0.0  0.2  10:11.12 systemd</span><br><span class="line">    2 root      20   0       0      0      0 S  0.0  0.0   0:00.57 kthreadd</span><br><span class="line">    4 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kworker/0:0H</span><br><span class="line">    6 root      20   0       0      0      0 S  0.0  0.0   4:03.46 ksoftirqd/0</span><br><span class="line">    7 root      rt   0       0      0      0 S  0.0  0.0   0:00.00 migration/0</span><br><span class="line">    8 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_bh</span><br><span class="line">    9 root      20   0       0      0      0 S  0.0  0.0  11:41.35 rcu_sched</span><br><span class="line">   10 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 lru-add-drain</span><br><span class="line">   11 root      rt   0       0      0      0 S  0.0  0.0   0:23.18 watchdog/0</span><br><span class="line">   13 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kdevtmpfs</span><br><span class="line">   14 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 netns</span><br><span class="line">   15 root      20   0       0      0      0 S  0.0  0.0   0:01.59 khungtaskd</span><br><span class="line">   16 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 writeback</span><br><span class="line">   17 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kintegrityd</span><br><span class="line">   18 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 bioset</span><br><span class="line">   19 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 bioset</span><br><span class="line">   20 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 bioset</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-常见命令"><a href="#7-常见命令" class="headerlink" title="7.常见命令"></a>7.常见命令</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd</td>
+<td>change directory</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>list files</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>remove</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>make directory</td>
+</tr>
+<tr>
+<td>rmdir</td>
+<td>remove directory</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>修改文件或者目录的时间属性</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>查找文件里符合条件的字符串</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>copy file</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>move file</td>
+</tr>
+<tr>
+<td>whereis</td>
+<td>查找文件</td>
+</tr>
+<tr>
+<td>tree</td>
+<td>以树状图列出目录的内容</td>
+</tr>
+<tr>
+<td>zip</td>
+<td>压缩</td>
+</tr>
+<tr>
+<td>unzip</td>
+<td>解压</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td>压缩</td>
+</tr>
+<tr>
+<td>gunzip</td>
+<td>解压</td>
+</tr>
+<tr>
+<td>tar</td>
+<td>tape archive: 备份文件</td>
+</tr>
+<tr>
+<td>tar -czvf tar.gz a.c</td>
+<td>备份a.c为tar.gz</td>
+</tr>
+<tr>
+<td>tar -tzvf tar.gz</td>
+<td>列出压缩文件内容</td>
+</tr>
+<tr>
+<td>tar -xzvf tar.gz</td>
+<td>解压</td>
+</tr>
+<tr>
+<td>ps</td>
+<td>process status:显示当前进程的状态</td>
+</tr>
+<tr>
+<td>ps -ef | grep x</td>
+<td>查看x进程</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>删除执行中的程序或工作</td>
+</tr>
+<tr>
+<td>kill -9 pid</td>
+<td>强制杀死pid进程</td>
+</tr>
+<tr>
+<td>sudo</td>
+<td>以系统管理者的身份执行指令</td>
+</tr>
+<tr>
+<td>vi/vim</td>
+<td>vim编辑器</td>
+</tr>
+<tr>
+<td>echo</td>
+<td>字符串的输出</td>
+</tr>
+<tr>
+<td>echo string &gt;&gt; test.txt</td>
+<td>在test.txt中添加string</td>
+</tr>
+<tr>
+<td>echo string &gt; test.txt</td>
+<td>用string覆盖test.txt内容</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Linux基础知识</li>
+        <li>本文作者：cheng5.du</li>
+        <li>创建时间：2020-10-28 12:05:45</li>
+        <li>
+            本文链接：https://www.duchengwu.top/2020/10/28/Linux基础知识/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/12/27/2019%E5%B9%B4%EF%BC%8C%E6%88%91%E6%83%B3%E5%92%8C%E4%BD%A0%E8%B0%88%E8%B0%88/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">2020年，我想和你谈谈</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/10/12/Docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Docker基础知识</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cheng5.du</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">京ICP备20011198号-1</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
