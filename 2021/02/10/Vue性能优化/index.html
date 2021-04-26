@@ -9,7 +9,7 @@
     
     <title>
         
-            分类: 前端 |
+            Vue性能优化 |
         
         cheng5.du
     </title>
@@ -74,7 +74,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/categories"
                             >
                                 分类
@@ -123,7 +123,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/categories">分类</a>
                 </li>
             
@@ -153,70 +153,182 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="category-container">
-        <div class="category-name">
-            <i class="fas fa-folder"></i>&nbsp;前端
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Vue性能优化</span>
         </div>
-        <div class="category-post-list">
-            
-<div class="archive-list-container">
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">cheng5.du</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-02-10 22:43:27
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2021</span>
-                <span class="archive-year-post-count">[2]</span>
-            </div>
-            <ul class="article-list">
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Vue/">Vue</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="Vue代码层面"><a href="#Vue代码层面" class="headerlink" title="Vue代码层面"></a>Vue代码层面</h2><ol>
+<li>v-if和v-show分场景使用<ol>
+<li>v-if 适用于在运行时很少改变条件，不需要频繁切换条件的场景。</li>
+<li>v-show 则适用于需要非常频繁切换条件的场景。</li>
+</ol>
+</li>
+<li>computed和watch分场景使用<ol>
+<li>当我们需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算；</li>
+<li>当我们需要在数据变化时执行异步或开销较大的操作时，应该使用 watch，使用 watch 选项允许我们执行异步操作 ( 访问一个 API )，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。</li>
+</ol>
+</li>
+<li>v-for遍历时必须为item添加key，且避免同时使用v-if<ol>
+<li>在列表数据进行遍历渲染时，需要为每一项 item 设置唯一 key 值，方便 Vue.js 内部机制精准找到该条列表数据。当 state 更新时，新的状态值和旧的状态值对比，较快地定位到 diff 。</li>
+<li>v-for的优先级高于v-if，每一次都需要遍历整个数组，影响速度。</li>
+</ol>
+</li>
+<li>长列表<ol>
+<li>如果只是纯粹的数据展示，可以使用Object.freeze()方法冻结一个对象。</li>
+</ol>
+</li>
+<li>时间销毁<ol>
+<li>组件本身的事件会自动销毁，如果是手动添加的（addEventListener）则需要手动清除（removeEventListener）。</li>
+</ol>
+</li>
+<li>图片懒加载<ol>
+<li>vue-lazyload</li>
+</ol>
+</li>
+<li>路由懒加载<ol>
+<li>const comp = () =&gt; import(‘…’)</li>
+</ol>
+</li>
+<li>第三方插件按需引入</li>
+<li>SSR</li>
+</ol>
+<h2 id="Webpack层面优化"><a href="#Webpack层面优化" class="headerlink" title="Webpack层面优化"></a>Webpack层面优化</h2><ol>
+<li>对图片压缩<ol>
+<li>image-webpack-loader</li>
+</ol>
+</li>
+<li>提取公共css</li>
+<li>优化SourceMap</li>
+</ol>
+<h2 id="Web技术优化"><a href="#Web技术优化" class="headerlink" title="Web技术优化"></a>Web技术优化</h2><ol>
+<li>开启gzip<ol>
+<li>nginx配置，webpack配置</li>
+</ol>
+</li>
+<li>浏览器缓存<ol>
+<li>cache</li>
+</ol>
+</li>
+<li>CDN<ol>
+<li>CDN 可以通过不同的域名来加载文件，从而使下载文件的并发连接数大大增加，且CDN 具有更好的可用性，更低的网络延迟和丢包率 。</li>
+</ol>
+</li>
+<li>Chrome Performance查看</li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Vue性能优化</li>
+        <li>本文作者：cheng5.du</li>
+        <li>创建时间：2021-02-10 22:43:27</li>
+        <li>
+            本文链接：https://www.duchengwu.top/2021/02/10/Vue性能优化/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/02/20/%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%80Loading/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">封装一个全局Loading</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
                            href="/2021/01/25/webpack%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/"
-                        >webpack优化配置</a>
-                        <span class="article-date">01-25</span>
-                    </li>
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">webpack优化配置</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/01/24/webpack%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"
-                        >webpack基础配置</a>
-                        <span class="article-date">01-24</span>
-                    </li>
-                
-            </ul>
-        </section>
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2020</span>
-                <span class="archive-year-post-count">[1]</span>
             </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2020/12/22/npm%E5%8C%85%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/"
-                        >npm包发布流程</a>
-                        <span class="article-date">12-22</span>
-                    </li>
-                
-            </ul>
-        </section>
-    
-</div>
+        
 
-        </div>
-    </div>
-    <div class="category-paginator">
-        <div class="paginator">
-    
-        <a class="prev btn"
-           href="/categories/%E5%89%8D%E7%AB%AF/"
-        >上一页</a>
-    
-
-    
-</div>
-
+        
     </div>
 </div>
 
@@ -249,6 +361,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -295,6 +424,14 @@
     </div>
 
     
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E4%BB%A3%E7%A0%81%E5%B1%82%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">Vue代码层面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack%E5%B1%82%E9%9D%A2%E4%BC%98%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">Webpack层面优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web%E6%8A%80%E6%9C%AF%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">Web技术优化</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
 
     <div class="image-viewer-container">
     <img src="">
@@ -330,6 +467,14 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 
