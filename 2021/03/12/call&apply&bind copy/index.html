@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cheng5.du">
+    
+    <title>
+        
+            call&amp;apply&amp;bind |
+        
+        cheng5.du
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#4284f4","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","article_img_align":"left","left_side_width":"260px","content_max_width":"1100px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"朋友，人生海海，来日方长，我是杜木土。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                cheng5.du
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">call&amp;apply&amp;bind</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">cheng5.du</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-03-12 20:35:46
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/JavaScript/">JavaScript</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li><p>call、apply、bind这三个方法属于显示绑定，这三个方法都能修改this的指向。</p>
+</li>
+<li><p>call和apply相对比较特殊，他们在修改this指向的同时，还会执行方法；但是bind在修改this后会返回一个待执行的方法。</p>
+</li>
+<li><p>call和apply另一个不同之处，就是参数的接收形式。</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">fn.call(<span class="built_in">this</span>, arg1, arg2, arg3 , ...) <span class="comment">// 散列</span></span><br><span class="line"></span><br><span class="line">fn.apply(<span class="built_in">this</span>, [arg1, arg2, arg3, ...]) <span class="comment">// 数组</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="title">funciton</span>(<span class="params">context, ...params</span>)</span> &#123;</span><br><span class="line">  <span class="comment">// 判断context的类型</span></span><br><span class="line">  <span class="comment">// if (typeof context === &#x27;object&#x27;) &#123;</span></span><br><span class="line">  <span class="comment">//   context = context || window</span></span><br><span class="line">  <span class="comment">// &#125; else &#123;</span></span><br><span class="line">  <span class="comment">//   context = Object.create(null)</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line">  <span class="keyword">typeof</span> context === <span class="string">&#x27;object&#x27;</span>)</span><br><span class="line">    ? context = context || <span class="built_in">window</span></span><br><span class="line">    : context = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 确保fn是独一无二的属性</span></span><br><span class="line">  <span class="keyword">let</span> fn = <span class="built_in">Symbol</span>()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 绑定this</span></span><br><span class="line">  context.fn = <span class="built_in">this</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// call的返回是一个执行过后的返回值</span></span><br><span class="line">  <span class="keyword">const</span> result = context.fn(...params)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 删除context添加的属性</span></span><br><span class="line">  <span class="keyword">delete</span> context.fn</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回值</span></span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myApply = <span class="function"><span class="title">funciton</span>(<span class="params">context, params</span>)</span> &#123;</span><br><span class="line">  <span class="comment">// 判断context的类型</span></span><br><span class="line">  <span class="keyword">typeof</span> context === <span class="string">&#x27;object&#x27;</span>)</span><br><span class="line">    ? context = context || <span class="built_in">window</span></span><br><span class="line">    : context = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 确保fn是独一无二的属性</span></span><br><span class="line">  <span class="keyword">let</span> fn = <span class="built_in">Symbol</span>()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 绑定this到context的fn属性上，context.fn()执行时，this就指向了context</span></span><br><span class="line">  context.fn = <span class="built_in">this</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取返回值</span></span><br><span class="line">  <span class="keyword">const</span> result = context.fn(...params)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 删除新增的属性</span></span><br><span class="line">  <span class="keyword">delete</span> context.fn</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回值</span></span><br><span class="line">  <span class="keyword">return</span> result  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="call-apply-使用eval方式实现"><a href="#call-apply-使用eval方式实现" class="headerlink" title="call/apply 使用eval方式实现"></a>call/apply 使用eval方式实现</h3><p>🚨 Notice1：主要的问题在于参数的处理，ES6有…展开运算符，但是ES5没有，所以这里使用eval()，eval函数执行时把变量转换成了字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a + b + c)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">add(...arr) <span class="comment">// 6</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">&#x27;add(&#x27;</span>+arr+<span class="string">&#x27;)&#x27;</span>) <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
+<p>🚨 Notice2：传递的参数，如果不全是数字，就不能提前解析，需要传入如‘str[0]’这样的字符串。eval()处理数组时，数组的每一项会被拿掉外层的‘’然后被当成一个变量当做参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a + b +c)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;我&#x27;</span>, <span class="string">&#x27;是&#x27;</span>, <span class="string">&#x27;杜木土&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正常传递参数</span></span><br><span class="line">print(arr[<span class="number">0</span>], arr[<span class="number">1</span>], arr[<span class="number">2</span>]) <span class="comment">//我是杜木土</span></span><br><span class="line"><span class="comment">// 同</span></span><br><span class="line">print(<span class="string">&#x27;我&#x27;</span>, <span class="string">&#x27;是&#x27;</span>, <span class="string">&#x27;杜木土&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 错误使用</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">&#x27;print(&#x27;</span>+arr+<span class="string">&#x27;)&#x27;</span>) <span class="comment">// Uncaught ReferenceError: 我 is not defined</span></span><br><span class="line"><span class="comment">// 同</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">&#x27;print(&#x27;</span>+[<span class="string">&#x27;我&#x27;</span>, <span class="string">&#x27;是&#x27;</span>, <span class="string">&#x27;杜木土&#x27;</span>]+<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line"><span class="comment">// 同</span></span><br><span class="line">print(我, 是, 杜木土) <span class="comment">// 我不是参数，所以未定义：引用错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确使用</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">&#x27;print(&#x27;</span>+[<span class="string">&#x27;arr[0]&#x27;</span>, <span class="string">&#x27;arr[1]&#x27;</span>, <span class="string">&#x27;arr[2]&#x27;</span>]+<span class="string">&#x27;)&#x27;</span>) <span class="comment">//我是杜木土</span></span><br><span class="line"><span class="comment">// 同</span></span><br><span class="line">print(arr[<span class="number">0</span>], arr[<span class="number">1</span>], arr[<span class="number">2</span>]) </span><br></pre></td></tr></table></figure>
+
+<h4 id="实现如下"><a href="#实现如下" class="headerlink" title="实现如下"></a>实现如下</h4><h5 id="eval-call"><a href="#eval-call" class="headerlink" title="eval - call"></a>eval - call</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Funciton.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">typeof</span> context === <span class="string">&#x27;object&#x27;</span>)</span><br><span class="line">    ? context = context || <span class="built_in">window</span></span><br><span class="line">    : context = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line">  context.fn = <span class="built_in">this</span></span><br><span class="line">  <span class="keyword">let</span> args = []</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>, len = <span class="built_in">arguments</span>.length; i &lt; len; i ++) &#123;</span><br><span class="line">    args.push(<span class="string">&#x27;arguments[&#x27;</span>+ i +<span class="string">&#x27;]&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> result = <span class="built_in">eval</span>(<span class="string">&#x27;context.fn(&#x27;</span>+args+<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">  <span class="keyword">delete</span> context.fn</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h5 id="eval-apply"><a href="#eval-apply" class="headerlink" title="eval - apply"></a>eval - apply</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myApply = <span class="function"><span class="keyword">function</span>(<span class="params">context, arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">typeof</span> context === <span class="string">&#x27;object&#x27;</span>)</span><br><span class="line">    ? context = context || <span class="built_in">window</span></span><br><span class="line">    : context = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line">  context.fn = <span class="built_in">this</span></span><br><span class="line">  <span class="keyword">const</span> args = []</span><br><span class="line">  <span class="keyword">const</span> result</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(arr.length) &#123;</span><br><span class="line">    result = context.fn()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>, len = <span class="built_in">arguments</span>.length; i &lt; len; i++) &#123;</span><br><span class="line">      args.push(<span class="string">&#x27;arguments[&#x27;</span>+ i +<span class="string">&#x27;]&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    result = <span class="built_in">eval</span>(<span class="string">&#x27;context.fn(&#x27;</span>+ args +<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">delete</span> context.fn</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 获取参数</span></span><br><span class="line">  <span class="comment">// let args = Array.prototype.slice.call(arguments) 方法1</span></span><br><span class="line">  <span class="comment">// let args = [].slice.call(arguments) 方法2</span></span><br><span class="line">  <span class="keyword">const</span> args = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>) <span class="comment">// 方法3</span></span><br><span class="line">  <span class="comment">// 获取this</span></span><br><span class="line">  <span class="keyword">const</span> context = args.shift()</span><br><span class="line">  <span class="comment">// 让return出去的函数不丢失this</span></span><br><span class="line">  <span class="keyword">const</span> self = <span class="built_in">this</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    self.apply(context, [].concat.call(args, <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>))) <span class="comment">// 考虑bind后的函数传参</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a, b,c)</span><br><span class="line">&#125;</span><br><span class="line">fn.myBind(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)() <span class="comment">// 1 2 3</span></span><br><span class="line">fn.myBind(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>)   <span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：call&amp;apply&amp;bind</li>
+        <li>本文作者：cheng5.du</li>
+        <li>创建时间：2021-03-12 20:35:46</li>
+        <li>
+            本文链接：https://www.duchengwu.top/2021/03/12/call&amp;apply&amp;bind copy/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/03/28/new&amp;create/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">new&amp;create</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/02/20/%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%80Loading/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">封装一个全局Loading</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cheng5.du</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">京ICP备20011198号-1</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">1.1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">1.2.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call-apply-%E4%BD%BF%E7%94%A8eval%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.3.</span> <span class="nav-text">call&#x2F;apply 使用eval方式实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%A6%82%E4%B8%8B"><span class="nav-number">1.3.1.</span> <span class="nav-text">实现如下</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#eval-call"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">eval - call</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#eval-apply"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">eval - apply</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">1.4.</span> <span class="nav-text">bind</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
