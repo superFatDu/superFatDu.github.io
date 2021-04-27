@@ -9,7 +9,7 @@
     
     <title>
         
-            Vue性能优化 |
+            前端缓存策略 |
         
         cheng5.du
     </title>
@@ -156,7 +156,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Vue性能优化</span>
+            <span class="title-hover-animation">前端缓存策略</span>
         </div>
 
         
@@ -172,7 +172,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-02-10 22:43:27
+        <i class="fas fa-edit"></i>&nbsp;2021-02-12 17:22:14
     </span>
     
         <span class="article-categories article-meta-item">
@@ -192,11 +192,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Vue/">Vue</a>&nbsp;
+                        <a href="/tags/%E6%80%A7%E8%83%BD/">性能</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E6%80%A7%E8%83%BD/">性能</a>&nbsp;
+                        | <a href="/tags/%E7%BC%93%E5%AD%98/">缓存</a>&nbsp;
                     </li>
                 
             </ul>
@@ -215,76 +215,36 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Vue代码层面"><a href="#Vue代码层面" class="headerlink" title="Vue代码层面"></a>Vue代码层面</h2><ol>
-<li>v-if和v-show分场景使用<ol>
-<li>v-if 适用于在运行时很少改变条件，不需要频繁切换条件的场景。</li>
-<li>v-show 则适用于需要非常频繁切换条件的场景。</li>
+            <blockquote>
+<p>通过网络获取内容既速度缓慢又开销巨大。较大的响应需要在客户端与服务器之间进行多次往返通信，这会延迟浏览器获得和处理内容的时间，还会增加访问者的流量费用。因此，缓存并重复利用之前获取的资源的能力成为性能优化的一个关键方面。——Chrome官方</p>
+</blockquote>
+<p>一个优秀的缓存策略可以缩短网页请求资源的距离，减少延迟，并且由于缓存文件可以重复利用，还可以减少带宽，降低网络负荷（减少网络 IO 消耗，提高访问速度）。本文主要讨论HTTP缓存。</p>
+<h2 id="前端缓存策略"><a href="#前端缓存策略" class="headerlink" title="前端缓存策略"></a>前端缓存策略</h2><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5.5j8tmy109680.svg" alt="Front-end Cache"></p>
+<h3 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h3><p>🚨 Notice：HTTP缓存都是从第二次请求开始的。</p>
+<p>第一次请求资源时，服务器返回资源，并在respone header头中回传资源的缓存参数;第二次请求时，浏览器判断这些请求参数，击中强缓存就直接200，否则就把请求参数加到request header头中传给服务器，看是否击中协商缓存，击中则返回304，否则服务器会返回新的资源。</p>
+<h4 id="缓存分类及用户行为"><a href="#缓存分类及用户行为" class="headerlink" title="缓存分类及用户行为"></a>缓存分类及用户行为</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E5%BC%BAor%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.5qad90q5c1c0.png" alt="cache type"></p>
+<h4 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h4><h5 id="缓存请求指令"><a href="#缓存请求指令" class="headerlink" title="缓存请求指令"></a>缓存请求指令</h5><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E7%BC%93%E5%AD%98%E8%AF%B7%E6%B1%82%E6%8C%87%E4%BB%A4.3vy0wn1kyae0.svg" alt="request"></p>
+<h5 id="缓存响应指令"><a href="#缓存响应指令" class="headerlink" title="缓存响应指令"></a>缓存响应指令</h5><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E7%BC%93%E5%AD%98%E5%93%8D%E5%BA%94%E6%8C%87%E4%BB%A4.5hbemcqu8xk0.svg" alt="response"></p>
+<h4 id="缓存位置"><a href="#缓存位置" class="headerlink" title="缓存位置"></a>缓存位置</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E7%BC%93%E5%AD%98%E4%BD%8D%E7%BD%AE.6o1ewe49oqo0.svg" alt="cache position"></p>
+<ol>
+<li>Service Worker：运行在浏览器背后的独立线程，一般可以用来实现缓存功能。使用 Service Worker的话，传输协议必须为 HTTPS。因为 Service Worker 中涉及到请求拦截，所以必须使用 HTTPS 协议来保障安全。Service Worker 的缓存与浏览器其他内建的缓存机制不同，它可以让我们自由控制缓存哪些文件、如何匹配缓存、如何读取缓存，并且缓存是持续性的。</li>
+<li>Memory Cache：内存中的缓存，主要包含的是当前中页面中已经抓取到的资源,例如页面上已经下载的样式、脚本、图片等。读取内存中的数据肯定比磁盘快,内存缓存虽然读取高效，可是缓存持续性很短，会随着进程的释放而释放。 一旦我们关闭 Tab 页面，内存中的缓存也就被释放了。</li>
+<li>Disk Cache：存储在硬盘中的缓存，读取速度慢点，但是什么都能存储到磁盘中，比之 Memory Cache 胜在容量和存储时效性上。在所有浏览器缓存中，Disk Cache 覆盖面基本是最大的。</li>
+<li>Push Cahe：HTTP/2 中的内容，当以上三种缓存都没有命中时，它才会被使用。它只在会话（Session）中存在，一旦会话结束就被释放，并且缓存时间也很短暂，在Chrome浏览器中只有5分钟左右，同时它也并非严格执行HTTP头中的缓存指令。国内没有普及HTTP/2 所以资料很少。</li>
 </ol>
-</li>
-<li>computed和watch分场景使用<ol>
-<li>当我们需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算；</li>
-<li>当我们需要在数据变化时执行异步或开销较大的操作时，应该使用 watch，使用 watch 选项允许我们执行异步操作 ( 访问一个 API )，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。</li>
-</ol>
-</li>
-<li>v-for遍历时必须为item添加key，且避免同时使用v-if<ol>
-<li>在列表数据进行遍历渲染时，需要为每一项 item 设置唯一 key 值，方便 Vue.js 内部机制精准找到该条列表数据。当 state 更新时，新的状态值和旧的状态值对比，较快地定位到 diff 。</li>
-<li>v-for的优先级高于v-if，每一次都需要遍历整个数组，影响速度。</li>
-</ol>
-</li>
-<li>长列表<ol>
-<li>如果只是纯粹的数据展示，可以使用Object.freeze()方法冻结一个对象。</li>
-</ol>
-</li>
-<li>时间销毁<ol>
-<li>组件本身的事件会自动销毁，如果是手动添加的（addEventListener）则需要手动清除（removeEventListener）。</li>
-</ol>
-</li>
-<li>图片懒加载<ol>
-<li>vue-lazyload</li>
-</ol>
-</li>
-<li>路由懒加载<ol>
-<li>const comp = () =&gt; import(‘…’)</li>
-</ol>
-</li>
-<li>第三方插件按需引入</li>
-<li>SSR</li>
-</ol>
-<h2 id="Webpack层面优化"><a href="#Webpack层面优化" class="headerlink" title="Webpack层面优化"></a>Webpack层面优化</h2><ol>
-<li>对图片压缩<ol>
-<li>image-webpack-loader</li>
-</ol>
-</li>
-<li>提取公共css</li>
-<li>优化SourceMap</li>
-</ol>
-<h2 id="Web技术优化"><a href="#Web技术优化" class="headerlink" title="Web技术优化"></a>Web技术优化</h2><ol>
-<li>开启gzip<ol>
-<li>nginx配置，webpack配置</li>
-</ol>
-</li>
-<li>浏览器缓存<ol>
-<li>cache</li>
-</ol>
-</li>
-<li>CDN<ol>
-<li>CDN 可以通过不同的域名来加载文件，从而使下载文件的并发连接数大大增加，且CDN 具有更好的可用性，更低的网络延迟和丢包率 。</li>
-</ol>
-</li>
-<li>Chrome Performance查看</li>
-</ol>
-
+<h4 id="缓存查找顺序"><a href="#缓存查找顺序" class="headerlink" title="缓存查找顺序"></a>缓存查找顺序</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5.3u6wr1p2r4m0.svg" alt="浏览器缓存"></p>
+<h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><h3 id="应用缓存"><a href="#应用缓存" class="headerlink" title="应用缓存"></a>应用缓存</h3>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Vue性能优化</li>
+        <li>本文标题：前端缓存策略</li>
         <li>本文作者：cheng5.du</li>
-        <li>创建时间：2021-02-10 22:43:27</li>
+        <li>创建时间：2021-02-12 17:22:14</li>
         <li>
-            本文链接：https://www.duchengwu.top/2021/02/10/Vue性能优化/
+            本文链接：https://www.duchengwu.top/2021/02/12/前端缓存策略/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -301,13 +261,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/02/12/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/"
+                           href="/2021/02/20/%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%80Loading/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">前端缓存策略</span>
+                                <span class="post-nav-title-item">封装一个全局Loading</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -317,10 +277,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/01/25/webpack%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/"
+                           href="/2021/02/10/Vue%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">webpack优化配置</span>
+                                <span class="post-nav-title-item">Vue性能优化</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -431,7 +391,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E4%BB%A3%E7%A0%81%E5%B1%82%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">Vue代码层面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack%E5%B1%82%E9%9D%A2%E4%BC%98%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">Webpack层面优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web%E6%8A%80%E6%9C%AF%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">Web技术优化</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="nav-number">1.</span> <span class="nav-text">前端缓存策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E7%BC%93%E5%AD%98"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%88%86%E7%B1%BB%E5%8F%8A%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">缓存分类及用户行为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cache-Control"><span class="nav-number">1.1.2.</span> <span class="nav-text">Cache-Control</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E8%AF%B7%E6%B1%82%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">缓存请求指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%93%8D%E5%BA%94%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">缓存响应指令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.1.3.</span> <span class="nav-text">缓存位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E6%9F%A5%E6%89%BE%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.1.4.</span> <span class="nav-text">缓存查找顺序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="nav-number">1.2.</span> <span class="nav-text">浏览器缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%BC%93%E5%AD%98"><span class="nav-number">1.3.</span> <span class="nav-text">应用缓存</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
