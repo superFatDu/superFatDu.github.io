@@ -240,7 +240,39 @@
 <li>Push Cahe：HTTP/2 中的内容，当以上三种缓存都没有命中时，它才会被使用。它只在会话（Session）中存在，一旦会话结束就被释放，并且缓存时间也很短暂，在Chrome浏览器中只有5分钟左右，同时它也并非严格执行HTTP头中的缓存指令。国内没有普及HTTP/2 所以资料很少。</li>
 </ol>
 <h4 id="缓存查找顺序"><a href="#缓存查找顺序" class="headerlink" title="缓存查找顺序"></a>缓存查找顺序</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5.3u6wr1p2r4m0.svg" alt="浏览器缓存"></p>
-<h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><h3 id="应用缓存"><a href="#应用缓存" class="headerlink" title="应用缓存"></a>应用缓存</h3>
+<h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><p>自行查阅资料</p>
+<h3 id="应用缓存"><a href="#应用缓存" class="headerlink" title="应用缓存"></a>应用缓存</h3><h4 id="应用缓存Application-Cache"><a href="#应用缓存Application-Cache" class="headerlink" title="应用缓存Application Cache"></a>应用缓存Application Cache</h4><p>Application Cache是HTML5的新特性，允许浏览器在本地存储页面所需要的资源，使得页面离线也可以访问。这比较适合一些页面上的应用以及静态的不经常变更的页面。其会缓存载体页面也是由于其机制。</p>
+<h5 id="缓存加载机制"><a href="#缓存加载机制" class="headerlink" title="缓存加载机制"></a>缓存加载机制</h5><ol>
+<li>在第一次访问时，浏览器加载完HTML文档后，会查看其是否有引入manifest文件。若引入，则加载manifest文件，然后根据manifest的文件内容进行资源的缓存，并缓存当前文档</li>
+<li>之后访问，浏览器首先会查看manifest文件是否被修改（无论是内容还是注释），如果被修改，将当做第一次访问，重新根据manifest文件内容进行缓存</li>
+<li>如果应用缓存存在，且manifest没有被修改，浏览器直接从缓存中加载文档（注意：加载文档）和资源，不会访问网络（注意：无论联网与否，都不会访问网络）</li>
+<li>在缓存多个资源文件时，浏览器下载资源文件会先放在一个临时的缓存中，如果有任何一个资源文件下载失败，浏览器将停止其他缓存资源的下载，并清除临时缓存。如果所有资源文件都被成功下载，浏览器将会把这些资源文件以及引用manifest文件的HTML文档移动到永久离线缓存中</li>
+</ol>
+<h4 id="PWA"><a href="#PWA" class="headerlink" title="PWA"></a>PWA</h4><p>PWA全称是: Progressive Web Apps(渐进式网页应用)。这是 2016 年，Google I/O 大会上提出一个下一代web应用的概念。这并不是描述一个技术，而是一些技术的合集,能让你在使用 Web的时候感觉像是在使用 APP。</p>
+<h5 id="缓存原理"><a href="#缓存原理" class="headerlink" title="缓存原理"></a>缓存原理</h5><p>核心就是利用浏览器service-worker另启一个线程，这个线程负责去监听所有https请求（注意是https）,当发现某些资源是需要缓存下来的他会把资源拉取到浏览器本地，访问的时候拦截请求，不走网络请求，直接读取本地资源。这样资源相当于都是用户本地的资源,响应速度肯定飞快，还有就是资源都在用户浏览器里面，就算断了网,资源也都是能正常访问。</p>
+<h5 id="PWA缓存策略"><a href="#PWA缓存策略" class="headerlink" title="PWA缓存策略"></a>PWA缓存策略</h5><ol>
+<li>Cache-First<ul>
+<li>在有缓存的时候返回缓存，没有缓存才会去请求并且把请求结果缓存。</li>
+</ul>
+</li>
+<li>Network-First<ul>
+<li>资源优先走网络，成功以后会把资源添加到缓存里面，当发现网失败就会回退读取缓存。</li>
+</ul>
+</li>
+<li>Stable-While-Revalidate<ul>
+<li>这种策略比较接近Cache-First,他们的区别在于他会先走缓存，走完缓存以后它会发出请求，请求的结果会用来更新缓存，也就是说你的下一次访问的如果时间足够请求返回的话，你就能拿到最新的数据了。</li>
+</ul>
+</li>
+<li>Cache-Only<ul>
+<li>只会去缓存里拿数据，缓存没有就失败了。</li>
+</ul>
+</li>
+<li>Network-Only<ul>
+<li>只请求线上，不读写缓存。</li>
+</ul>
+</li>
+</ol>
+
         </div>
 
         
@@ -398,7 +430,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="nav-number">1.</span> <span class="nav-text">前端缓存策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E7%BC%93%E5%AD%98"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%88%86%E7%B1%BB%E5%8F%8A%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">缓存分类及用户行为</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%BA%E7%BC%93%E5%AD%98Status-Code"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">强缓存Status Code</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98Status-Code"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">协商缓存Status Code</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cache-Control"><span class="nav-number">1.1.2.</span> <span class="nav-text">Cache-Control</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E8%AF%B7%E6%B1%82%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">缓存请求指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%93%8D%E5%BA%94%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">缓存响应指令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.1.3.</span> <span class="nav-text">缓存位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E6%9F%A5%E6%89%BE%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.1.4.</span> <span class="nav-text">缓存查找顺序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="nav-number">1.2.</span> <span class="nav-text">浏览器缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%BC%93%E5%AD%98"><span class="nav-number">1.3.</span> <span class="nav-text">应用缓存</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="nav-number">1.</span> <span class="nav-text">前端缓存策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E7%BC%93%E5%AD%98"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%88%86%E7%B1%BB%E5%8F%8A%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">缓存分类及用户行为</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%BA%E7%BC%93%E5%AD%98Status-Code"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">强缓存Status Code</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98Status-Code"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">协商缓存Status Code</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cache-Control"><span class="nav-number">1.1.2.</span> <span class="nav-text">Cache-Control</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E8%AF%B7%E6%B1%82%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">缓存请求指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%93%8D%E5%BA%94%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">缓存响应指令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.1.3.</span> <span class="nav-text">缓存位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E6%9F%A5%E6%89%BE%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.1.4.</span> <span class="nav-text">缓存查找顺序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="nav-number">1.2.</span> <span class="nav-text">浏览器缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%BC%93%E5%AD%98"><span class="nav-number">1.3.</span> <span class="nav-text">应用缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%BC%93%E5%AD%98Application-Cache"><span class="nav-number">1.3.1.</span> <span class="nav-text">应用缓存Application Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">缓存加载机制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PWA"><span class="nav-number">1.3.2.</span> <span class="nav-text">PWA</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E5%8E%9F%E7%90%86"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">缓存原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PWA%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">PWA缓存策略</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
