@@ -177,9 +177,23 @@
         <section class="archive-item">
             <div class="archive-item-header">
                 <span class="archive-year">2021</span>
-                <span class="archive-year-post-count">[4]</span>
+                <span class="archive-year-post-count">[6]</span>
             </div>
             <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/03/12/call&apply&bind%20copy/"
+                        >call&amp;apply&amp;bind</a>
+                        <span class="article-date">03-12</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/02/20/%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%80Loading/"
+                        >封装一个全局Loading</a>
+                        <span class="article-date">02-20</span>
+                    </li>
                 
                     <li class="article-item">
                         <a class="article-title"
@@ -254,24 +268,35 @@
         </div>
 
         <div class="page-main-content-bottom">
-            <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            
-              <span>2020</span>&nbsp;-&nbsp;
-            
-            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cheng5.du</a>
-        </div>
-        
-        <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
-        </div>
-        
-            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">京ICP备20011198号-1</a></div>
-        
-    </div>
-</footer>
+            .footer {
+  font-size: 1rem;
+  color: var(--third-text-color);
+
+
+  a {
+    color: var(--third-text-color);
+
+
+    &:hover {
+      color: var(--primary-color);
+
+    }
+  }
+
+  .info-container {
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .info-item {
+    margin: 5px 0;
+  }
+
+  .icon-animate {
+    animation: icon-animate 1.2s ease-in-out infinite;
+  }
+
+}
 
         </div>
     </div>

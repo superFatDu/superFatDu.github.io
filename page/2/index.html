@@ -171,6 +171,121 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2021/03/12/call&apply&bind%20copy/">
+                        call&amp;apply&amp;bind
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        概述
+call、apply、bind这三个方法属于显示绑定，这三个方法都能修改this的指向。
+
+call和apply相对比较特殊，他们在修改this指向的同时，还会执行方法；但是bind在修改this后会返回一个待执行的方法。
+
+call和appl...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Mar 12 2021 20:35:46 GMT+0800">2021-03-12</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/JavaScript/">JavaScript</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/03/12/call&apply&bind%20copy/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/02/20/%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%80Loading/">
+                        封装一个全局Loading
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+由于平时工作过程中使用element ui等比较多，所以这种插件就没有怎么动手做过。懒的同时，也显示出基础十分薄弱，没有深入思考过Vue.use()到底要做什么。
+
+Vue.use(plugin)
+安装插件。
+
+参数1&#123;Object | ...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Feb 20 2021 17:56:05 GMT+0800">2021-02-20</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Vue/">Vue</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/02/20/%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%80Loading/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2021/02/12/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/">
                         前端缓存策略
                     </a>
@@ -587,24 +702,35 @@ webpack安装与使用
         </div>
 
         <div class="page-main-content-bottom">
-            <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            
-              <span>2020</span>&nbsp;-&nbsp;
-            
-            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cheng5.du</a>
-        </div>
-        
-        <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
-        </div>
-        
-            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">京ICP备20011198号-1</a></div>
-        
-    </div>
-</footer>
+            .footer {
+  font-size: 1rem;
+  color: var(--third-text-color);
+
+
+  a {
+    color: var(--third-text-color);
+
+
+    &:hover {
+      color: var(--primary-color);
+
+    }
+  }
+
+  .info-container {
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .info-item {
+    margin: 5px 0;
+  }
+
+  .icon-animate {
+    animation: icon-animate 1.2s ease-in-out infinite;
+  }
+
+}
 
         </div>
     </div>
