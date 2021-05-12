@@ -450,80 +450,11 @@
 
     
         <aside class="page-aside">
-            .post-toc-wrap {
-  width: 100%;
-  font-size: 0.92rem;
-  box-sizing: border-box;
-
-  .post-toc {
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0 2px 12px 10px;
-      text-align: left;
-
-      &:last-child {
-        padding-bottom: 0;
-      }
-
-      > ol {
-        padding-left: 0;
-      }
-
-      a {
-        transition-property: all;
-        transition();
-      }
-    }
-
-
-    .nav-item {
-      line-height: 1.8;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-
-    .nav {
-      .nav-child {
-        display: hexo-config('toc.expand_all') ? block : none;
-      }
-
-      .active > .nav-child {
-        display: block;
-      }
-
-      .active-current > .nav-child {
-        display: block;
-
-        > .nav-item {
-          display: block;
-        }
-      }
-
-
-      .nav-number, .nav-text {
-        color: var(--default-text-color);
-      }
-
-      .active > a {
-        .nav-number, .nav-text {
-          color: var(--primary-color);
-        }
-      }
-
-      .active-current > a {
-        .nav-number, .nav-text {
-          color: var(--primary-color);
-        }
-      }
-    }
-  }
-}
-
-
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">Promise基础用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80Promise%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">基础Promise实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">Promise基础结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#resolve-reject%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">resolve&#x2F;reject函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#then%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.</span> <span class="nav-text">then函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Have-a-try"><span class="nav-number">2.4.</span> <span class="nav-text">Have a try</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E6%94%AF%E6%8C%81"><span class="nav-number">2.5.</span> <span class="nav-text">异步支持</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.5.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%AD%A3"><span class="nav-number">2.5.2.</span> <span class="nav-text">修正</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81"><span class="nav-number">2.5.3.</span> <span class="nav-text">完整代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6Promise%E5%AE%9E%E7%8E%B0-%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">进阶Promise实现(链式调用)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.1.</span> <span class="nav-text">链式调用示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.2.</span> <span class="nav-text">进阶实现</span></a></li></ol></li></ol>
+    </div>
+</div>
         </aside>
     
 

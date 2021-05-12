@@ -269,7 +269,7 @@
 <li>Promise.prototype.catch(onRejected)</li>
 <li>Promise.prototype.finally(onFinally): 添加一个事件处理回调于当前promise对象，并且在原promise对象解析完毕后，返回一个新的promise对象。回调会在当前promise运行完毕后被调用，无论当前promise的状态是完成(fulfilled)还是失败(rejected)。=&gt; finally的回调函数中不接收任何参数，它仅用于无论最终结果如何都要执行的情况。</li>
 </ol>
-<h5 id="手写Promise"><a href="#手写Promise" class="headerlink" title="手写Promise"></a>手写Promise</h5><p><a class="link"   target="_blank" rel="noopener" href="https://www.duchengwu.top/2021/05/04/%E7%AE%80%E6%98%93Promise/" >简易Promise<i class="fas fa-external-link-alt"></i></a></p>
+<h5 id="手写Promise"><a href="#手写Promise" class="headerlink" title="手写Promise"></a>手写Promise</h5><p><a class="link"   target="_blank" rel="noopener" href="https://www.duchengwu.top/2021/05/06/%E7%AE%80%E6%98%93Promise/" >简易Promise<i class="fas fa-external-link-alt"></i></a></p>
 <h5 id="then-catch"><a href="#then-catch" class="headerlink" title="then/catch"></a>then/catch</h5><h4 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h4>
         </div>
 
@@ -487,80 +487,11 @@
 
     
         <aside class="page-aside">
-            .post-toc-wrap {
-  width: 100%;
-  font-size: 0.92rem;
-  box-sizing: border-box;
-
-  .post-toc {
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0 2px 12px 10px;
-      text-align: left;
-
-      &:last-child {
-        padding-bottom: 0;
-      }
-
-      > ol {
-        padding-left: 0;
-      }
-
-      a {
-        transition-property: all;
-        transition();
-      }
-    }
-
-
-    .nav-item {
-      line-height: 1.8;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-
-    .nav {
-      .nav-child {
-        display: hexo-config('toc.expand_all') ? block : none;
-      }
-
-      .active > .nav-child {
-        display: block;
-      }
-
-      .active-current > .nav-child {
-        display: block;
-
-        > .nav-item {
-          display: block;
-        }
-      }
-
-
-      .nav-number, .nav-text {
-        color: var(--default-text-color);
-      }
-
-      .active > a {
-        .nav-number, .nav-text {
-          color: var(--primary-color);
-        }
-      }
-
-      .active-current > a {
-        .nav-number, .nav-text {
-          color: var(--primary-color);
-        }
-      }
-    }
-  }
-}
-
-
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">JS运行机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5"><span class="nav-number">2.</span> <span class="nav-text">同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">异步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E5%BC%82%E6%AD%A5"><span class="nav-number">3.1.</span> <span class="nav-text">为什么有异步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.2.</span> <span class="nav-text">异步应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">3.3.</span> <span class="nav-text">异步解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#callback"><span class="nav-number">3.3.1.</span> <span class="nav-text">callback</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">3.3.2.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise%E7%94%A8%E6%B3%95"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">Promise用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise-API"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">Promise API</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%8B%E5%86%99Promise"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">手写Promise</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#then-catch"><span class="nav-number">3.3.2.5.</span> <span class="nav-text">then&#x2F;catch</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#async-await"><span class="nav-number">3.3.3.</span> <span class="nav-text">async&#x2F;await</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
         </aside>
     
 

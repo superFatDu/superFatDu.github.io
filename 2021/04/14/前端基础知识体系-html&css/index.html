@@ -560,80 +560,11 @@
 
     
         <aside class="page-aside">
-            .post-toc-wrap {
-  width: 100%;
-  font-size: 0.92rem;
-  box-sizing: border-box;
-
-  .post-toc {
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0 2px 12px 10px;
-      text-align: left;
-
-      &:last-child {
-        padding-bottom: 0;
-      }
-
-      > ol {
-        padding-left: 0;
-      }
-
-      a {
-        transition-property: all;
-        transition();
-      }
-    }
-
-
-    .nav-item {
-      line-height: 1.8;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-
-    .nav {
-      .nav-child {
-        display: hexo-config('toc.expand_all') ? block : none;
-      }
-
-      .active > .nav-child {
-        display: block;
-      }
-
-      .active-current > .nav-child {
-        display: block;
-
-        > .nav-item {
-          display: block;
-        }
-      }
-
-
-      .nav-number, .nav-text {
-        color: var(--default-text-color);
-      }
-
-      .active > a {
-        .nav-number, .nav-text {
-          color: var(--primary-color);
-        }
-      }
-
-      .active-current > a {
-        .nav-number, .nav-text {
-          color: var(--primary-color);
-        }
-      }
-    }
-  }
-}
-
-
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E8%AF%AD%E4%B9%89%E5%8C%96%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">如何理解语义化？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E5%93%AA%E4%BA%9B%E6%A0%87%E7%AD%BE%E5%BC%8F%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%EF%BC%9F%E5%93%AA%E4%BA%9B%E5%BC%8F%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">默认情况下，哪些标签式块级元素？哪些式内联元素？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-%E5%B8%83%E5%B1%80"><span class="nav-number">2.1.</span> <span class="nav-text">CSS - 布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%BD%E5%BA%A6%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%EF%BC%9F"><span class="nav-number">2.1.1.</span> <span class="nav-text">盒子模型的宽度如何计算？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clientWidth-offsetWidth"><span class="nav-number">2.1.2.</span> <span class="nav-text">clientWidth&#x2F;offsetWidth</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#margin%E7%BA%B5%E5%90%91%E9%87%8D%E5%8F%A0%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.3.</span> <span class="nav-text">margin纵向重叠问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#margin%E8%B4%9F%E5%80%BC%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.4.</span> <span class="nav-text">margin负值问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BFC%E7%9A%84%E7%90%86%E8%A7%A3%E5%92%8C%E5%BA%94%E7%94%A8"><span class="nav-number">2.1.5.</span> <span class="nav-text">BFC的理解和应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#float%E5%B8%83%E5%B1%80%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BB%A5%E5%8F%8Aclearfix"><span class="nav-number">2.1.6.</span> <span class="nav-text">float布局的问题，以及clearfix</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex%E5%B8%83%E5%B1%80%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.7.</span> <span class="nav-text">flex布局的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#flex%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.7.1.</span> <span class="nav-text">flex概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#flex%E8%AF%AD%E6%B3%95"><span class="nav-number">2.1.7.2.</span> <span class="nav-text">flex语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-%E5%AE%9A%E4%BD%8D"><span class="nav-number">2.2.</span> <span class="nav-text">CSS - 定位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#relative-absolute-fixed%E5%88%86%E5%88%AB%E6%A0%B9%E6%8D%AE%E4%BB%80%E4%B9%88%E5%AE%9A%E4%BD%8D"><span class="nav-number">2.2.1.</span> <span class="nav-text">relative&#x2F;absolute&#x2F;fixed分别根据什么定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.2.</span> <span class="nav-text">居中对齐有哪些方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">垂直居中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">水平垂直居中</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-%E5%9B%BE%E6%96%87%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">CSS - 图文样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#line-height%E5%A6%82%E4%BD%95%E7%BB%A7%E6%89%BF"><span class="nav-number">2.3.1.</span> <span class="nav-text">line-height如何继承</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#p%E6%A0%87%E7%AD%BE%E7%9A%84%E8%A1%8C%E9%AB%98%E6%98%AF%E5%A4%9A%E5%B0%91"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">p标签的行高是多少</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-%E5%93%8D%E5%BA%94%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">CSS - 响应式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rem-em"><span class="nav-number">2.4.1.</span> <span class="nav-text">rem&#x2F;em</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vw-vh"><span class="nav-number">2.4.2.</span> <span class="nav-text">vw&#x2F;vh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">2.4.3.</span> <span class="nav-text">常见的解决方案</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
         </aside>
     
 
