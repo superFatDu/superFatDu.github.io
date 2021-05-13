@@ -253,7 +253,6 @@
 
 <p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210508/ec.3d4vz5mhgrw0.png" alt="ec"></p>
 <h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210507/eventloop.6zm0jk6zu140.svg" alt="EVENT LOOP1"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210508/eventloop2.7gj42zx2oo40.webp" alt="EVENT LOOP"></p>
 <h3 id="Event-Loop执行顺序（以如上代码为例）"><a href="#Event-Loop执行顺序（以如上代码为例）" class="headerlink" title="Event Loop执行顺序（以如上代码为例）"></a>Event Loop执行顺序（以如上代码为例）</h3><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210508/eventloopintro.4d2pe0a0z800.png" alt="eventloopintro"></p>
 <p>🚨 Notice：输出undefined的原因是：同步函数在调用栈中都执行完毕弹出，且最后一个函数没有返回值时，默认返回undefined。</p>
 <ol>
@@ -274,7 +273,9 @@
 <h3 id="宏任务和微任务"><a href="#宏任务和微任务" class="headerlink" title="宏任务和微任务"></a>宏任务和微任务</h3><blockquote>
 <p>ES6 规范中，microtask 称为 jobs，macrotask 称为 task宏任务是由宿主发起的，而微任务由JavaScript自身发起。</p>
 </blockquote>
-<h4 id="宏任务（macrotask）和-微任务（microtask）区别"><a href="#宏任务（macrotask）和-微任务（microtask）区别" class="headerlink" title="宏任务（macrotask）和 微任务（microtask）区别"></a>宏任务（macrotask）和 微任务（microtask）区别</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210508/hongweirenwu.1q8tscq7lck.svg" alt="diff"></p>
+<p>执行栈清空 =&gt; 执行微任务 =&gt; 尝试DOM渲染 =&gt; 执行宏任务</p>
+<p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210508/eventloop2.7gj42zx2oo40.webp" alt="EVENT LOOP"></p>
+<h4 id="宏任务（macrotask）和-微任务（microtask）区别"><a href="#宏任务（macrotask）和-微任务（microtask）区别" class="headerlink" title="宏任务（macrotask）和 微任务（microtask）区别"></a>宏任务（macrotask）和 微任务（microtask）区别</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210511/hongweirenwu1.3r3clo6ocra0.svg" alt="diff"></p>
 <h4 id="执行步骤"><a href="#执行步骤" class="headerlink" title="执行步骤"></a>执行步骤</h4><ol>
 <li>执行宏任务（script(整体代码)）。</li>
 <li>有同步任务直接执行，遇到异步任务划分为宏任务和微任务。</li>
