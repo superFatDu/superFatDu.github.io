@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cheng5.du">
+    
+    <title>
+        
+            前端基础知识体系-JS-WEB-API(DOM、BOM) |
+        
+        cheng5.du
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#4284f4","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","article_img_align":"left","left_side_width":"260px","content_max_width":"1100px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"人生海海，来日方长，我是杜木土。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                cheng5.du
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/netease"
+                            >
+                                网抑云
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/netease">网抑云</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">前端基础知识体系-JS-WEB-API(DOM、BOM)</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">cheng5.du</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-08 15:34:27
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/">知识体系</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/JS/">JS</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/JS-WEB-API/">JS-WEB-API</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><blockquote>
+<p>DOM（Document Object Model）：文档对象模型，是W3C组织推荐的处理可扩展置标语言的标准编程接口。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210511/htmlpage.2zv52ljd0cq0.png" alt="dom-tree"></p>
+<h3 id="DOM节点操作"><a href="#DOM节点操作" class="headerlink" title="DOM节点操作"></a>DOM节点操作</h3><h4 id="获取DOM节点"><a href="#获取DOM节点" class="headerlink" title="获取DOM节点"></a>获取DOM节点</h4><h5 id="通过元素类型获取"><a href="#通过元素类型获取" class="headerlink" title="通过元素类型获取"></a>通过元素类型获取</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById() <span class="comment">// id</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName() <span class="comment">// tagName =&gt; array</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByClassName() <span class="comment">// className =&gt; array</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByName() <span class="comment">// name =&gt; array</span></span><br><span class="line"><span class="built_in">document</span>.querySelector()</span><br><span class="line"><span class="built_in">document</span>.querySelectorAll()</span><br></pre></td></tr></table></figure>
+
+<h5 id="通过关系树获取（遍历节点树）"><a href="#通过关系树获取（遍历节点树）" class="headerlink" title="通过关系树获取（遍历节点树）"></a>通过关系树获取（遍历节点树）</h5><p>DOM可以将任何HTML、XML文档描述称一个多层次的节点树。所有的节点都有nodeType属性，代表节点的不同类型。常用类型如下：</p>
+<ol>
+<li>Element类型（元素节点）：nodeType为 1</li>
+<li>Text类型（文本节点）：nodeType为 3</li>
+<li>Comment类型（注释节点）：nodeType为 8</li>
+<li>Document类型（document节点）：nodeType为 9</li>
+</ol>
+<p>遍历属性：</p>
+<ol>
+<li>parentNode // 父节点</li>
+<li>childNodes // 子节点</li>
+<li>firstChild // 第一个子节点</li>
+<li>lastChild // 最后一个子节点</li>
+<li>nextSibling // 后一个兄弟节点</li>
+<li>previousSibling // 前一个兄弟节点</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;has-navbar&#x27;</span>)[<span class="number">0</span>].childNodes</span><br><span class="line"></span><br><span class="line"><span class="comment">// output</span></span><br><span class="line">NodeList(<span class="number">10</span>)</span><br><span class="line"><span class="number">0</span>: text</span><br><span class="line"><span class="number">1</span>: a</span><br><span class="line"><span class="number">2</span>: text</span><br><span class="line"><span class="number">3</span>: div#top_nav.navbar.forpc</span><br><span class="line"><span class="number">4</span>: text</span><br><span class="line"><span class="number">5</span>: div#home</span><br><span class="line"><span class="number">6</span>: text</span><br><span class="line"><span class="number">7</span>: input#antiforgery_token</span><br><span class="line"><span class="number">8</span>: text</span><br><span class="line"><span class="number">9</span>: iframe#google_osd_static_frame_9713154175128</span><br><span class="line">length: <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="通过元素节点遍历"><a href="#通过元素节点遍历" class="headerlink" title="通过元素节点遍历"></a>通过元素节点遍历</h5><ol>
+<li>parentElement // 父元素节点</li>
+<li>children</li>
+<li>firstElementChild</li>
+<li>lastElementChild</li>
+<li>nextElementSibling</li>
+<li>previousElementSibling</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;has-navbar&#x27;</span>)[<span class="number">0</span>].children</span><br><span class="line"></span><br><span class="line"><span class="comment">// output</span></span><br><span class="line">HTMLCollection(<span class="number">5</span>)</span><br><span class="line"><span class="number">0</span>: a</span><br><span class="line"><span class="number">1</span>: div#top_nav.navbar.forpc</span><br><span class="line"><span class="number">2</span>: div#home</span><br><span class="line"><span class="number">3</span>: input#antiforgery_token</span><br><span class="line"><span class="number">4</span>: iframe#google_osd_static_frame_9713154175128</span><br><span class="line">length: <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="节点属性操作"><a href="#节点属性操作" class="headerlink" title="节点属性操作"></a>节点属性操作</h5><ol>
+<li><p>attribute</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;p-test&quot;</span>&gt;</span>这是测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;p&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">p.setAttribute(<span class="string">&#x27;data-name&#x27;</span>, <span class="string">&#x27;ppppp&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p.getAttribute(<span class="string">&#x27;data-name&#x27;</span>)) <span class="comment">// &#x27;ppppp&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>property</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;p-test&quot;</span>&gt;</span>这是测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.p-test</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;p&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p.style.width) <span class="comment">// &#x27;100px&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(p.className) <span class="comment">// &#x27;p-text&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(p.nodeName) <span class="comment">// p</span></span><br><span class="line"><span class="built_in">console</span>.log(p.nodeType) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="DOM结构操作"><a href="#DOM结构操作" class="headerlink" title="DOM结构操作"></a>DOM结构操作</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;divEle&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;oldEle&quot;</span>&gt;</span>This is old element<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divEle = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;#div&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="新增-插入节点"><a href="#新增-插入节点" class="headerlink" title="新增/插入节点"></a>新增/插入节点</h4><p>如果不是新增的节点，选中的节点存在于文档流中，执行parentEle.appendChild(existEle)时，会将existEle移动到parentEle中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加节点</span></span><br><span class="line"><span class="keyword">const</span> newEle = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>)</span><br><span class="line">newEle.innerHTML = <span class="string">&#x27;This is new element&#x27;</span></span><br><span class="line"><span class="comment">// 插入</span></span><br><span class="line">divEle.appendChild(newEle)</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">divEle.removeChild(newP)</span><br></pre></td></tr></table></figure>
+
+<h4 id="替换节点"><a href="#替换节点" class="headerlink" title="替换节点"></a>替换节点</h4><p>用指定的节点替换当前节点的一个子节点，并返回被替换掉的节点。如果替换的节点存在于DOM树种，首先会被从原来的位置删除，然后replace被替换的节点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> oldEle = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;#oldEle&#x27;</span>)</span><br><span class="line"></span><br><span class="line">divEle.replaceChild(newEle, oldEle)</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">divEle.insertBefor(newEle, oldEle) <span class="comment">// 在oldEle之前插入newEle</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="复制节点"><a href="#复制节点" class="headerlink" title="复制节点"></a>复制节点</h4><p>element.cloneNode(boolean) =&gt; boolean: true深复制当前及所有子节点；boolean: false浅复制当前节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cloneEle1 = newEle.cloneNode(<span class="literal">true</span>)</span><br><span class="line"><span class="keyword">const</span> cloneEle2 = newEle.cloneNode(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="移动节点"><a href="#移动节点" class="headerlink" title="移动节点"></a>移动节点</h4><ol>
+<li>方法一：如果要移动，肯定是存在的节点，所以appendChild(ele)就能移动节点</li>
+<li>方法二：克隆（cloneNode）原节点，删除（removeChild）原节点，插入（insertBefore）克隆的节点。</li>
+</ol>
+<h3 id="DOM性能"><a href="#DOM性能" class="headerlink" title="DOM性能"></a>DOM性能</h3><p>DOM操作一方面会引起回流重绘，而且JS引擎和渲染引擎需要来回切换执行上下文，都很消耗性能，所以需要避免频繁操作DOM。</p>
+<h4 id="提升方法"><a href="#提升方法" class="headerlink" title="提升方法"></a>提升方法</h4><h5 id="对DOM查询做缓存"><a href="#对DOM查询做缓存" class="headerlink" title="对DOM查询做缓存"></a>对DOM查询做缓存</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不缓存</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;p&#x27;</span>).length; i++) &#123;</span><br><span class="line">  <span class="comment">// TODO</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 缓存</span></span><br><span class="line"><span class="keyword">const</span> len = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;p&#x27;</span>).length</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="comment">// TODO</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="将频繁的操作改为一次性操作"><a href="#将频繁的操作改为一次性操作" class="headerlink" title="将频繁的操作改为一次性操作"></a>将频繁的操作改为一次性操作</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 将多个li标签插入到list中</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> list = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;list&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建文档片段，此时还没有插入到DOM树种</span></span><br><span class="line"><span class="keyword">const</span> frag = <span class="built_in">document</span>.createDocumentFragment()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把需要插入的节点先放到文档片段中</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">const</span> li = <span class="built_in">document</span>.createElement(<span class="string">&#x27;li&#x27;</span>)</span><br><span class="line">  frag.appendChild(li)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将文档片段插入到list中</span></span><br><span class="line">list.appendChild(frag)</span><br></pre></td></tr></table></figure>
+
+<h3 id="DOM相关问题"><a href="#DOM相关问题" class="headerlink" title="DOM相关问题"></a>DOM相关问题</h3><h4 id="DOM是那种数据结构"><a href="#DOM是那种数据结构" class="headerlink" title="DOM是那种数据结构"></a>DOM是那种数据结构</h4><p>树</p>
+<h4 id="DOM常用的api"><a href="#DOM常用的api" class="headerlink" title="DOM常用的api"></a>DOM常用的api</h4><ol>
+<li>节点查找</li>
+<li>属性操作</li>
+<li>DOM结构操作（增、删、替换、克隆……）</li>
+</ol>
+<h4 id="attribute和property的区别"><a href="#attribute和property的区别" class="headerlink" title="attribute和property的区别"></a>attribute和property的区别</h4><ol>
+<li>attribute：修改HTML属性，会改变HTML结构</li>
+<li>property：修改对象属性，不会改变HTML结构</li>
+</ol>
+<h4 id="一次性插入多个节点，考虑性能问题"><a href="#一次性插入多个节点，考虑性能问题" class="headerlink" title="一次性插入多个节点，考虑性能问题"></a>一次性插入多个节点，考虑性能问题</h4><p>如上DOM性能</p>
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><blockquote>
+<p>BOM（Browser Object Model）：浏览器对象模型，）被广泛应用于 Web 开发之中，主要用于客户端浏览器的管理。</p>
+</blockquote>
+<h3 id="BOM对象"><a href="#BOM对象" class="headerlink" title="BOM对象"></a>BOM对象</h3><ol>
+<li>window对象：JS的最顶层对象，其他BOM对象都是window对象的属性</li>
+<li>document对象：文档对象</li>
+<li>location对象：浏览器当前URL信息</li>
+<li>navigator对象：浏览器本身信息</li>
+<li>screen对象：客户端屏幕信息</li>
+<li>history对象：浏览器访问历史信息</li>
+</ol>
+<h4 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h4><p>BOM对象的核心对象是window对象，他表示浏览器的一个实例。所有的JavaScript全局对象、函数以及变量均自动成为window对象的成员（全局变量是window对象的属性，全局函数是window对象的方法）。</p>
+<h5 id="window对象方法"><a href="#window对象方法" class="headerlink" title="window对象方法"></a>window对象方法</h5><p>调用时，省略window.</p>
+<ol>
+<li>alert()</li>
+<li>confirm()</li>
+<li>open()</li>
+<li>close()</li>
+<li>setTimeout()</li>
+<li>setInterval()<br>……</li>
+</ol>
+<h4 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h4><p>当浏览器加载文档后，会自动构建文档对象模型，把文档中每个元素都映射到一个数据集合中，然后以 document 进行访问。document 对象与它所包含的各种节点（如表单、图像和链接）构成了早期的文档对象模型（DOM 0级）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.img.src</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.form.action</span><br></pre></td></tr></table></figure>
+
+<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h4><p>用于获得当前页面的地址 (URL)</p>
+<h5 id="location对象属性"><a href="#location对象属性" class="headerlink" title="location对象属性"></a>location对象属性</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RUL = <span class="string">&quot;https://blog.csdn.net/lhjuejiang/article/details/79453407&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.location</span><br><span class="line"></span><br><span class="line"><span class="comment">//output</span></span><br><span class="line">Location: &#123;</span><br><span class="line">  ancestorOrigins: DOMStringList &#123;<span class="attr">length</span>: <span class="number">0</span>&#125;,</span><br><span class="line">  assign: ƒ assign(),</span><br><span class="line">  hash: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  host: <span class="string">&quot;blog.csdn.net&quot;</span>,</span><br><span class="line">  hostname: <span class="string">&quot;blog.csdn.net&quot;</span>,</span><br><span class="line">  href: <span class="string">&quot;https://blog.csdn.net/lhjuejiang/article/details/79453407&quot;</span>,</span><br><span class="line">  origin: <span class="string">&quot;https://blog.csdn.net&quot;</span>,</span><br><span class="line">  pathname: <span class="string">&quot;/lhjuejiang/article/details/79453407&quot;</span>,</span><br><span class="line">  port: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  protocol: <span class="string">&quot;https:&quot;</span>,</span><br><span class="line">  reload: ƒ reload(),</span><br><span class="line">  replace: ƒ replace(),</span><br><span class="line">  search: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  toString: ƒ toString(),</span><br><span class="line">  valueOf: ƒ valueOf(),</span><br><span class="line">  <span class="built_in">Symbol</span>(<span class="built_in">Symbol</span>.toPrimitive): <span class="literal">undefined</span>,</span><br><span class="line">  __proto__: Location,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h4><p>存储了与浏览器相关的基本信息，如名称、版本和系统等。</p>
+<h5 id="navigator对象属性"><a href="#navigator对象属性" class="headerlink" title="navigator对象属性"></a>navigator对象属性</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.navigator</span><br><span class="line"></span><br><span class="line"><span class="comment">// output</span></span><br><span class="line">Navigator: &#123;</span><br><span class="line">  appCodeName: <span class="string">&quot;Mozilla&quot;</span>,</span><br><span class="line">  appName: <span class="string">&quot;Netscape&quot;</span>,</span><br><span class="line">  appVersion: <span class="string">&quot;5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36&quot;</span>,</span><br><span class="line">  connection: NetworkInformation &#123;<span class="attr">onchange</span>: <span class="literal">null</span>, <span class="attr">effectiveType</span>: <span class="string">&quot;4g&quot;</span>, <span class="attr">rtt</span>: <span class="number">50</span>, <span class="attr">downlink</span>: <span class="number">10</span>, <span class="attr">saveData</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">  cookieEnabled: <span class="literal">true</span>,</span><br><span class="line">  doNotTrack: <span class="literal">null</span>,</span><br><span class="line">  geolocation: Geolocation &#123;&#125;,</span><br><span class="line">  hardwareConcurrency: <span class="number">4</span>,</span><br><span class="line">  language: <span class="string">&quot;zh-CN&quot;</span>,</span><br><span class="line">  languages: (<span class="number">2</span>) [<span class="string">&quot;zh-CN&quot;</span>, <span class="string">&quot;zh&quot;</span>],</span><br><span class="line">  maxTouchPoints: <span class="number">0</span>,</span><br><span class="line">  mediaCapabilities: MediaCapabilities &#123;&#125;,</span><br><span class="line">  mediaSession: MediaSession &#123;<span class="attr">metadata</span>: <span class="literal">null</span>, <span class="attr">playbackState</span>: <span class="string">&quot;none&quot;</span>&#125;,</span><br><span class="line">  mimeTypes: MimeTypeArray &#123;<span class="number">0</span>: MimeType, <span class="number">1</span>: MimeType, <span class="number">2</span>: MimeType, <span class="number">3</span>: MimeType, application/pdf: MimeType, application/x-google-chrome-pdf: MimeType, application/x-nacl: MimeType, application/x-pnacl: MimeType, <span class="attr">length</span>: <span class="number">4</span>&#125;,</span><br><span class="line">  onLine: <span class="literal">true</span>,</span><br><span class="line">  permissions: Permissions &#123;&#125;,</span><br><span class="line">  platform: <span class="string">&quot;Win32&quot;</span>,</span><br><span class="line">  plugins: PluginArray &#123;<span class="number">0</span>: Plugin, <span class="number">1</span>: Plugin, <span class="number">2</span>: Plugin, Chrome PDF ,<span class="attr">Plugin</span>: Plugin, Chrome PDF Viewer: Plugin, Native Client: Plugin, <span class="attr">length</span>: <span class="number">3</span>&#125;,</span><br><span class="line">  product: <span class="string">&quot;Gecko&quot;</span>,</span><br><span class="line">  productSub: <span class="string">&quot;20030107&quot;</span>,</span><br><span class="line">  scheduling: Scheduling &#123;&#125;,</span><br><span class="line">  userActivation: UserActivation &#123;<span class="attr">hasBeenActive</span>: <span class="literal">true</span>, <span class="attr">isActive</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">  userAgent: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36&quot;</span>,</span><br><span class="line">  vendor: <span class="string">&quot;Google Inc.&quot;</span>,</span><br><span class="line">  vendorSub: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  webdriver: <span class="literal">false</span>,</span><br><span class="line">  webkitPersistentStorage: DeprecatedStorageQuota &#123;&#125;,</span><br><span class="line">  webkitTemporaryStorage: DeprecatedStorageQuota &#123;&#125;,</span><br><span class="line">  __proto__: Navigator</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h4><p>存储了客户端屏幕信息，这些信息可以用来探测客户端硬件配置。</p>
+<h5 id="screen对象属性"><a href="#screen对象属性" class="headerlink" title="screen对象属性"></a>screen对象属性</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.screen</span><br><span class="line"></span><br><span class="line"><span class="comment">// output</span></span><br><span class="line">Screen: &#123;</span><br><span class="line">  availHeight: <span class="number">1040</span>,</span><br><span class="line">  availLeft: <span class="number">1366</span>,</span><br><span class="line">  availTop: -<span class="number">139</span>,</span><br><span class="line">  availWidth: <span class="number">1920</span>,</span><br><span class="line">  colorDepth: <span class="number">24</span>,</span><br><span class="line">  height: <span class="number">1080</span>,</span><br><span class="line">  orientation: ScreenOrientation &#123;<span class="attr">angle</span>: <span class="number">0</span>, <span class="attr">type</span>: <span class="string">&quot;landscape-primary&quot;</span>, <span class="attr">onchange</span>: <span class="literal">null</span>&#125;,</span><br><span class="line">  pixelDepth: <span class="number">24</span>,</span><br><span class="line">  width: <span class="number">1920</span>,</span><br><span class="line">  __proto__: Screen</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h4><p>存储了库互动浏览器的浏览历史。</p>
+<h5 id="history对象方法"><a href="#history对象方法" class="headerlink" title="history对象方法"></a>history对象方法</h5><ol>
+<li>history.back()：后退</li>
+<li>history.forward()：前进</li>
+<li>history.go(index)：前进、后退几页</li>
+<li>history.pushState()：添加历史记录</li>
+<li>history.replaceState()：修改历史记录</li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：前端基础知识体系-JS-WEB-API(DOM、BOM)</li>
+        <li>本文作者：cheng5.du</li>
+        <li>创建时间：2021-05-08 15:34:27</li>
+        <li>
+            本文链接：https://www.duchengwu.top/2021/05/08/前端基础知识体系-JS-WEB-API(DOM、BOM)/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/06/%E7%AE%80%E6%98%93Promise/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">简易Promise</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'f5e5a64013254dc350d6',
+                    clientSecret: '6dcc1f868f745192f773d82ab85cdfc62989ca27',
+                    repo: 'blogComments',
+                    owner: 'superFatDu',
+                    admin: ['superFatDu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cheng5.du</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">京ICP备20011198号-1</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM"><span class="nav-number">1.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">DOM节点操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96DOM%E8%8A%82%E7%82%B9"><span class="nav-number">1.1.1.</span> <span class="nav-text">获取DOM节点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%85%83%E7%B4%A0%E7%B1%BB%E5%9E%8B%E8%8E%B7%E5%8F%96"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">通过元素类型获取</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%85%B3%E7%B3%BB%E6%A0%91%E8%8E%B7%E5%8F%96%EF%BC%88%E9%81%8D%E5%8E%86%E8%8A%82%E7%82%B9%E6%A0%91%EF%BC%89"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">通过关系树获取（遍历节点树）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E9%81%8D%E5%8E%86"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">通过元素节点遍历</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">节点属性操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM%E7%BB%93%E6%9E%84%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">DOM结构操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9"><span class="nav-number">1.2.1.</span> <span class="nav-text">新增&#x2F;插入节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E8%8A%82%E7%82%B9"><span class="nav-number">1.2.3.</span> <span class="nav-text">替换节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9"><span class="nav-number">1.2.4.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E8%8A%82%E7%82%B9"><span class="nav-number">1.2.5.</span> <span class="nav-text">复制节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E8%8A%82%E7%82%B9"><span class="nav-number">1.2.6.</span> <span class="nav-text">移动节点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM%E6%80%A7%E8%83%BD"><span class="nav-number">1.3.</span> <span class="nav-text">DOM性能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E5%8D%87%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">提升方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%B9DOM%E6%9F%A5%E8%AF%A2%E5%81%9A%E7%BC%93%E5%AD%98"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">对DOM查询做缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86%E9%A2%91%E7%B9%81%E7%9A%84%E6%93%8D%E4%BD%9C%E6%94%B9%E4%B8%BA%E4%B8%80%E6%AC%A1%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">将频繁的操作改为一次性操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.</span> <span class="nav-text">DOM相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM%E6%98%AF%E9%82%A3%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.4.1.</span> <span class="nav-text">DOM是那种数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM%E5%B8%B8%E7%94%A8%E7%9A%84api"><span class="nav-number">1.4.2.</span> <span class="nav-text">DOM常用的api</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#attribute%E5%92%8Cproperty%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.3.</span> <span class="nav-text">attribute和property的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E6%80%A7%E6%8F%92%E5%85%A5%E5%A4%9A%E4%B8%AA%E8%8A%82%E7%82%B9%EF%BC%8C%E8%80%83%E8%99%91%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.4.</span> <span class="nav-text">一次性插入多个节点，考虑性能问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM"><span class="nav-number">2.</span> <span class="nav-text">BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BOM%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.</span> <span class="nav-text">BOM对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#window%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.1.</span> <span class="nav-text">window对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#window%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">window对象方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.2.</span> <span class="nav-text">document对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.3.</span> <span class="nav-text">location对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#location%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">location对象属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#navigator%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.4.</span> <span class="nav-text">navigator对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#navigator%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">navigator对象属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#screen%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.5.</span> <span class="nav-text">screen对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#screen%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">screen对象属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#history%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.6.</span> <span class="nav-text">history对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#history%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.6.1.</span> <span class="nav-text">history对象方法</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
