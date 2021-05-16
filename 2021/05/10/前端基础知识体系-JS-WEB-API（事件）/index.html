@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cheng5.du">
+    
+    <title>
+        
+            前端基础知识体系-JS-WEB-API（事件） |
+        
+        cheng5.du
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#4284f4","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","article_img_align":"left","left_side_width":"260px","content_max_width":"1100px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"人生海海，来日方长，我是杜木土。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                cheng5.du
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/netease"
+                            >
+                                网抑云
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/netease">网抑云</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">前端基础知识体系-JS-WEB-API（事件）</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">cheng5.du</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-10 10:11:57
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/">知识体系</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/JS/">JS</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/JS-WEB-API/">JS-WEB-API</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ol>
+<li>事件是用户或浏览器自身执行的某种动作，如click,load和mouseover都是事件的名字。</li>
+<li>事件是javaScript和DOM之间交互的桥梁。</li>
+</ol>
+<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><h4 id="DOM直接绑定"><a href="#DOM直接绑定" class="headerlink" title="DOM直接绑定"></a>DOM直接绑定</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">onClick</span>=<span class="string">&quot;alert(&#x27;DOM直接绑定&#x27;)&quot;</span>&gt;</span>click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="JS中绑定"><a href="#JS中绑定" class="headerlink" title="JS中绑定"></a>JS中绑定</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;btn&#x27;</span>)</span><br><span class="line">btn.onClick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(<span class="string">&#x27;JS中绑定&#x27;</span>) &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="绑定事件监听函数"><a href="#绑定事件监听函数" class="headerlink" title="绑定事件监听函数"></a>绑定事件监听函数</h4><p>elementObject.addEventListener(eventName,handle,useCapture);</p>
+<p>useCapture参数是用来指定事件捕获还是事件冒泡。true =&gt; 捕获；false =&gt; 冒泡。默认为false。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;btn&#x27;</span>)</span><br><span class="line">btn.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123; alert(<span class="string">&#x27;绑定事件监听函数&#x27;</span>) &#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="简易通用绑定函数"><a href="#简易通用绑定函数" class="headerlink" title="简易通用绑定函数"></a>简易通用绑定函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EventBind</span>(<span class="params">element, eventType, selector, fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!fn) [selector, fn] = [<span class="literal">null</span>, selector] <span class="comment">// 三个参数是普通调用，四个参数是代理调用</span></span><br><span class="line">  element.addEventListener(eventType, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> target = event.target</span><br><span class="line">    <span class="comment">// 使用call可以在事件绑定的回调函数里面使用this，但是需要注意的是回调函数不能用箭头函数！！！</span></span><br><span class="line">    <span class="keyword">if</span>(selector) &#123;</span><br><span class="line">       <span class="keyword">if</span> (target.matches(selector)) fn.call(target, event)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      fn.call(target, event)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;btn&#x27;</span>)</span><br><span class="line">EventBind(btn, <span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123; alert(<span class="built_in">this</span>.innerHTML) &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210514/event.1qatug31uj6o.jpg" alt="event"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 伪代码</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;wrap&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> wrap = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;wrap&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> parent = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;parent&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;btn&#x27;</span>)</span><br><span class="line"></span><br><span class="line">wrap.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="string">&#x27;外层冒泡&#x27;</span>) &#125;, <span class="literal">false</span>)</span><br><span class="line">parent.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="string">&#x27;父级捕获&#x27;</span>) &#125;, <span class="literal">true</span>)<span class="comment">// useCapture为true，可以被捕获</span></span><br><span class="line">parent.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="string">&#x27;父级冒泡&#x27;</span>) &#125;, <span class="literal">false</span>)</span><br><span class="line">btn.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="string">&#x27;目标捕获&#x27;</span>) &#125;, <span class="literal">true</span>) <span class="comment">// useCapture为true，可以被捕获</span></span><br><span class="line">btn.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="string">&#x27;目标冒泡&#x27;</span>) &#125;, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// output</span></span><br><span class="line">父级捕获</span><br><span class="line">目标捕获</span><br><span class="line">目标冒泡</span><br><span class="line">父级冒泡</span><br><span class="line">外层冒泡</span><br></pre></td></tr></table></figure>
+
+<h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><p>从DOM最外层一层层往里捕获事件，直到目标元素。</p>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>从目标元素由内到外冒泡。</p>
+<h3 id="事件委托-事件代理"><a href="#事件委托-事件代理" class="headerlink" title="事件委托/事件代理"></a>事件委托/事件代理</h3><p>事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrap&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> wrapEle = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.wrap&#x27;</span>)</span><br><span class="line">  <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> frag = <span class="built_in">document</span>.createDocumentFragment()</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">let</span> ele = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>)</span><br><span class="line">      ele.innerHTML = <span class="string">`This is ele <span class="subst">$&#123;i&#125;</span>`</span></span><br><span class="line">      frag.appendChild(ele)</span><br><span class="line">    &#125;</span><br><span class="line">    wrapEle.append(frag)</span><br><span class="line">    <span class="built_in">console</span>.log(frag)</span><br><span class="line">  &#125;</span><br><span class="line">  wrapEle.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.target.innerHTML)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="回调函数参数e"><a href="#回调函数参数e" class="headerlink" title="回调函数参数e"></a>回调函数参数e</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">MouseEvent: &#123;</span><br><span class="line">  altKey: <span class="literal">false</span>,</span><br><span class="line">  bubbles: <span class="literal">true</span>,</span><br><span class="line">  button: <span class="number">0</span>,</span><br><span class="line">  buttons: <span class="number">0</span>,</span><br><span class="line">  cancelBubble: <span class="literal">false</span>,</span><br><span class="line">  cancelable: <span class="literal">true</span>,</span><br><span class="line">  clientX: <span class="number">63</span>,</span><br><span class="line">  clientY: <span class="number">104</span>,</span><br><span class="line">  composed: <span class="literal">true</span>,</span><br><span class="line">  ctrlKey: <span class="literal">false</span>,</span><br><span class="line">  currentTarget: <span class="literal">null</span>,</span><br><span class="line">  defaultPrevented: <span class="literal">false</span>,</span><br><span class="line">  detail: <span class="number">1</span>,</span><br><span class="line">  eventPhase: <span class="number">0</span>,</span><br><span class="line">  fromElement: <span class="literal">null</span>,</span><br><span class="line">  isTrusted: <span class="literal">true</span>,</span><br><span class="line">  layerX: <span class="number">63</span>,</span><br><span class="line">  layerY: <span class="number">104</span>,</span><br><span class="line">  metaKey: <span class="literal">false</span>,</span><br><span class="line">  movementX: <span class="number">0</span>,</span><br><span class="line">  movementY: <span class="number">0</span>,</span><br><span class="line">  offsetX: <span class="number">55</span>,</span><br><span class="line">  offsetY: <span class="number">14</span>,</span><br><span class="line">  pageX: <span class="number">63</span>,</span><br><span class="line">  pageY: <span class="number">104</span>,</span><br><span class="line">  path: (<span class="number">6</span>) [p, div.wrap, body, html, <span class="built_in">document</span>, Window],</span><br><span class="line">  relatedTarget: <span class="literal">null</span>,</span><br><span class="line">  returnValue: <span class="literal">true</span>,</span><br><span class="line">  screenX: <span class="number">1429</span>,</span><br><span class="line">  screenY: <span class="number">68</span>,</span><br><span class="line">  shiftKey: <span class="literal">false</span>,</span><br><span class="line">  sourceCapabilities: InputDeviceCapabilities &#123;<span class="attr">firesTouchEvents</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">  srcElement: p,</span><br><span class="line">  target: p,</span><br><span class="line">  timeStamp: <span class="number">5829.630000051111</span>,</span><br><span class="line">  toElement: p,</span><br><span class="line">  type: <span class="string">&quot;click&quot;</span>,</span><br><span class="line">  view: Window &#123;<span class="attr">window</span>: Window, <span class="attr">self</span>: Window, <span class="attr">document</span>: <span class="built_in">document</span>, <span class="attr">name</span>: <span class="string">&quot;&quot;</span>, <span class="attr">location</span>: Location, …&#125;,</span><br><span class="line">  which: <span class="number">1</span>,</span><br><span class="line">  x: <span class="number">63</span>,</span><br><span class="line">  y: <span class="number">104</span>,</span><br><span class="line">  __proto__: MouseEvent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="回调函数参数e-target"><a href="#回调函数参数e-target" class="headerlink" title="回调函数参数e.target"></a>回调函数参数e.target</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br></pre></td><td class="code"><pre><span class="line">accessKey: <span class="string">&quot;&quot;</span></span><br><span class="line">align: <span class="string">&quot;&quot;</span></span><br><span class="line">ariaAtomic: <span class="literal">null</span></span><br><span class="line">ariaAutoComplete: <span class="literal">null</span></span><br><span class="line">ariaBusy: <span class="literal">null</span></span><br><span class="line">ariaChecked: <span class="literal">null</span></span><br><span class="line">ariaColCount: <span class="literal">null</span></span><br><span class="line">ariaColIndex: <span class="literal">null</span></span><br><span class="line">ariaColSpan: <span class="literal">null</span></span><br><span class="line">ariaCurrent: <span class="literal">null</span></span><br><span class="line">ariaDescription: <span class="literal">null</span></span><br><span class="line">ariaDisabled: <span class="literal">null</span></span><br><span class="line">ariaExpanded: <span class="literal">null</span></span><br><span class="line">ariaHasPopup: <span class="literal">null</span></span><br><span class="line">ariaHidden: <span class="literal">null</span></span><br><span class="line">ariaKeyShortcuts: <span class="literal">null</span></span><br><span class="line">ariaLabel: <span class="literal">null</span></span><br><span class="line">ariaLevel: <span class="literal">null</span></span><br><span class="line">ariaLive: <span class="literal">null</span></span><br><span class="line">ariaModal: <span class="literal">null</span></span><br><span class="line">ariaMultiLine: <span class="literal">null</span></span><br><span class="line">ariaMultiSelectable: <span class="literal">null</span></span><br><span class="line">ariaOrientation: <span class="literal">null</span></span><br><span class="line">ariaPlaceholder: <span class="literal">null</span></span><br><span class="line">ariaPosInSet: <span class="literal">null</span></span><br><span class="line">ariaPressed: <span class="literal">null</span></span><br><span class="line">ariaReadOnly: <span class="literal">null</span></span><br><span class="line">ariaRelevant: <span class="literal">null</span></span><br><span class="line">ariaRequired: <span class="literal">null</span></span><br><span class="line">ariaRoleDescription: <span class="literal">null</span></span><br><span class="line">ariaRowCount: <span class="literal">null</span></span><br><span class="line">ariaRowIndex: <span class="literal">null</span></span><br><span class="line">ariaRowSpan: <span class="literal">null</span></span><br><span class="line">ariaSelected: <span class="literal">null</span></span><br><span class="line">ariaSetSize: <span class="literal">null</span></span><br><span class="line">ariaSort: <span class="literal">null</span></span><br><span class="line">ariaValueMax: <span class="literal">null</span></span><br><span class="line">ariaValueMin: <span class="literal">null</span></span><br><span class="line">ariaValueNow: <span class="literal">null</span></span><br><span class="line">ariaValueText: <span class="literal">null</span></span><br><span class="line">assignedSlot: <span class="literal">null</span></span><br><span class="line">attributeStyleMap: StylePropertyMap &#123;<span class="attr">size</span>: <span class="number">0</span>&#125;</span><br><span class="line">attributes: NamedNodeMap &#123;<span class="attr">length</span>: <span class="number">0</span>&#125;</span><br><span class="line">autocapitalize: <span class="string">&quot;&quot;</span></span><br><span class="line">autofocus: <span class="literal">false</span></span><br><span class="line">baseURI: <span class="string">&quot;file:///G:/blog/source/_posts/index.html&quot;</span></span><br><span class="line">childElementCount: <span class="number">0</span></span><br><span class="line">childNodes: NodeList [text]</span><br><span class="line">children: HTMLCollection []</span><br><span class="line">classList: DOMTokenList [value: <span class="string">&quot;&quot;</span>]</span><br><span class="line">className: <span class="string">&quot;&quot;</span></span><br><span class="line">clientHeight: <span class="number">21</span></span><br><span class="line">clientLeft: <span class="number">0</span></span><br><span class="line">clientTop: <span class="number">0</span></span><br><span class="line">clientWidth: <span class="number">1275</span></span><br><span class="line">contentEditable: <span class="string">&quot;inherit&quot;</span></span><br><span class="line">dataset: DOMStringMap &#123;&#125;</span><br><span class="line">dir: <span class="string">&quot;&quot;</span></span><br><span class="line">draggable: <span class="literal">false</span></span><br><span class="line">elementTiming: <span class="string">&quot;&quot;</span></span><br><span class="line">enterKeyHint: <span class="string">&quot;&quot;</span></span><br><span class="line">firstChild: text</span><br><span class="line">firstElementChild: <span class="literal">null</span></span><br><span class="line">hidden: <span class="literal">false</span></span><br><span class="line">id: <span class="string">&quot;&quot;</span></span><br><span class="line">innerHTML: <span class="string">&quot;This is ele 2&quot;</span></span><br><span class="line">innerText: <span class="string">&quot;This is ele 2&quot;</span></span><br><span class="line">inputMode: <span class="string">&quot;&quot;</span></span><br><span class="line">isConnected: <span class="literal">true</span></span><br><span class="line">isContentEditable: <span class="literal">false</span></span><br><span class="line">lang: <span class="string">&quot;&quot;</span></span><br><span class="line">lastChild: text</span><br><span class="line">lastElementChild: <span class="literal">null</span></span><br><span class="line">localName: <span class="string">&quot;p&quot;</span></span><br><span class="line">namespaceURI: <span class="string">&quot;http://www.w3.org/1999/xhtml&quot;</span></span><br><span class="line">nextElementSibling: p</span><br><span class="line">nextSibling: p</span><br><span class="line">nodeName: <span class="string">&quot;P&quot;</span></span><br><span class="line">nodeType: <span class="number">1</span></span><br><span class="line">nodeValue: <span class="literal">null</span></span><br><span class="line">nonce: <span class="string">&quot;&quot;</span></span><br><span class="line">offsetHeight: <span class="number">21</span></span><br><span class="line">offsetLeft: <span class="number">8</span></span><br><span class="line">offsetParent: body</span><br><span class="line">offsetTop: <span class="number">90</span></span><br><span class="line">offsetWidth: <span class="number">1275</span></span><br><span class="line">onabort: <span class="literal">null</span></span><br><span class="line">onanimationend: <span class="literal">null</span></span><br><span class="line">onanimationiteration: <span class="literal">null</span></span><br><span class="line">onanimationstart: <span class="literal">null</span></span><br><span class="line">onauxclick: <span class="literal">null</span></span><br><span class="line">onbeforecopy: <span class="literal">null</span></span><br><span class="line">onbeforecut: <span class="literal">null</span></span><br><span class="line">onbeforepaste: <span class="literal">null</span></span><br><span class="line">onbeforexrselect: <span class="literal">null</span></span><br><span class="line">onblur: <span class="literal">null</span></span><br><span class="line">oncancel: <span class="literal">null</span></span><br><span class="line">oncanplay: <span class="literal">null</span></span><br><span class="line">oncanplaythrough: <span class="literal">null</span></span><br><span class="line">onchange: <span class="literal">null</span></span><br><span class="line">onclick: <span class="literal">null</span></span><br><span class="line">onclose: <span class="literal">null</span></span><br><span class="line">oncontextmenu: <span class="literal">null</span></span><br><span class="line">oncopy: <span class="literal">null</span></span><br><span class="line">oncuechange: <span class="literal">null</span></span><br><span class="line">oncut: <span class="literal">null</span></span><br><span class="line">ondblclick: <span class="literal">null</span></span><br><span class="line">ondrag: <span class="literal">null</span></span><br><span class="line">ondragend: <span class="literal">null</span></span><br><span class="line">ondragenter: <span class="literal">null</span></span><br><span class="line">ondragleave: <span class="literal">null</span></span><br><span class="line">ondragover: <span class="literal">null</span></span><br><span class="line">ondragstart: <span class="literal">null</span></span><br><span class="line">ondrop: <span class="literal">null</span></span><br><span class="line">ondurationchange: <span class="literal">null</span></span><br><span class="line">onemptied: <span class="literal">null</span></span><br><span class="line">onended: <span class="literal">null</span></span><br><span class="line">onerror: <span class="literal">null</span></span><br><span class="line">onfocus: <span class="literal">null</span></span><br><span class="line">onformdata: <span class="literal">null</span></span><br><span class="line">onfullscreenchange: <span class="literal">null</span></span><br><span class="line">onfullscreenerror: <span class="literal">null</span></span><br><span class="line">ongotpointercapture: <span class="literal">null</span></span><br><span class="line">oninput: <span class="literal">null</span></span><br><span class="line">oninvalid: <span class="literal">null</span></span><br><span class="line">onkeydown: <span class="literal">null</span></span><br><span class="line">onkeypress: <span class="literal">null</span></span><br><span class="line">onkeyup: <span class="literal">null</span></span><br><span class="line">onload: <span class="literal">null</span></span><br><span class="line">onloadeddata: <span class="literal">null</span></span><br><span class="line">onloadedmetadata: <span class="literal">null</span></span><br><span class="line">onloadstart: <span class="literal">null</span></span><br><span class="line">onlostpointercapture: <span class="literal">null</span></span><br><span class="line">onmousedown: <span class="literal">null</span></span><br><span class="line">onmouseenter: <span class="literal">null</span></span><br><span class="line">onmouseleave: <span class="literal">null</span></span><br><span class="line">onmousemove: <span class="literal">null</span></span><br><span class="line">onmouseout: <span class="literal">null</span></span><br><span class="line">onmouseover: <span class="literal">null</span></span><br><span class="line">onmouseup: <span class="literal">null</span></span><br><span class="line">onmousewheel: <span class="literal">null</span></span><br><span class="line">onpaste: <span class="literal">null</span></span><br><span class="line">onpause: <span class="literal">null</span></span><br><span class="line">onplay: <span class="literal">null</span></span><br><span class="line">onplaying: <span class="literal">null</span></span><br><span class="line">onpointercancel: <span class="literal">null</span></span><br><span class="line">onpointerdown: <span class="literal">null</span></span><br><span class="line">onpointerenter: <span class="literal">null</span></span><br><span class="line">onpointerleave: <span class="literal">null</span></span><br><span class="line">onpointermove: <span class="literal">null</span></span><br><span class="line">onpointerout: <span class="literal">null</span></span><br><span class="line">onpointerover: <span class="literal">null</span></span><br><span class="line">onpointerrawupdate: <span class="literal">null</span></span><br><span class="line">onpointerup: <span class="literal">null</span></span><br><span class="line">onprogress: <span class="literal">null</span></span><br><span class="line">onratechange: <span class="literal">null</span></span><br><span class="line">onreset: <span class="literal">null</span></span><br><span class="line">onresize: <span class="literal">null</span></span><br><span class="line">onscroll: <span class="literal">null</span></span><br><span class="line">onsearch: <span class="literal">null</span></span><br><span class="line">onseeked: <span class="literal">null</span></span><br><span class="line">onseeking: <span class="literal">null</span></span><br><span class="line">onselect: <span class="literal">null</span></span><br><span class="line">onselectionchange: <span class="literal">null</span></span><br><span class="line">onselectstart: <span class="literal">null</span></span><br><span class="line">onstalled: <span class="literal">null</span></span><br><span class="line">onsubmit: <span class="literal">null</span></span><br><span class="line">onsuspend: <span class="literal">null</span></span><br><span class="line">ontimeupdate: <span class="literal">null</span></span><br><span class="line">ontoggle: <span class="literal">null</span></span><br><span class="line">ontransitioncancel: <span class="literal">null</span></span><br><span class="line">ontransitionend: <span class="literal">null</span></span><br><span class="line">ontransitionrun: <span class="literal">null</span></span><br><span class="line">ontransitionstart: <span class="literal">null</span></span><br><span class="line">onvolumechange: <span class="literal">null</span></span><br><span class="line">onwaiting: <span class="literal">null</span></span><br><span class="line">onwebkitanimationend: <span class="literal">null</span></span><br><span class="line">onwebkitanimationiteration: <span class="literal">null</span></span><br><span class="line">onwebkitanimationstart: <span class="literal">null</span></span><br><span class="line">onwebkitfullscreenchange: <span class="literal">null</span></span><br><span class="line">onwebkitfullscreenerror: <span class="literal">null</span></span><br><span class="line">onwebkittransitionend: <span class="literal">null</span></span><br><span class="line">onwheel: <span class="literal">null</span></span><br><span class="line">outerHTML: <span class="string">&quot;&lt;p&gt;This is ele 2&lt;/p&gt;&quot;</span></span><br><span class="line">outerText: <span class="string">&quot;This is ele 2&quot;</span></span><br><span class="line">ownerDocument: <span class="built_in">document</span></span><br><span class="line">parentElement: div.wrap</span><br><span class="line">parentNode: div.wrap</span><br><span class="line">part: DOMTokenList [value: <span class="string">&quot;&quot;</span>]</span><br><span class="line">prefix: <span class="literal">null</span></span><br><span class="line">previousElementSibling: p</span><br><span class="line">previousSibling: p</span><br><span class="line">scrollHeight: <span class="number">21</span></span><br><span class="line">scrollLeft: <span class="number">0</span></span><br><span class="line">scrollTop: <span class="number">0</span></span><br><span class="line">scrollWidth: <span class="number">1275</span></span><br><span class="line">shadowRoot: <span class="literal">null</span></span><br><span class="line">slot: <span class="string">&quot;&quot;</span></span><br><span class="line">spellcheck: <span class="literal">true</span></span><br><span class="line">style: CSSStyleDeclaration &#123;<span class="attr">alignContent</span>: <span class="string">&quot;&quot;</span>, <span class="attr">alignItems</span>: <span class="string">&quot;&quot;</span>, <span class="attr">alignSelf</span>: <span class="string">&quot;&quot;</span>, <span class="attr">alignmentBaseline</span>: <span class="string">&quot;&quot;</span>, <span class="attr">all</span>: <span class="string">&quot;&quot;</span>, …&#125;</span><br><span class="line">(...)</span><br><span class="line">timeStamp: <span class="number">5829.630000051111</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h3><h4 id="UI事件"><a href="#UI事件" class="headerlink" title="UI事件"></a>UI事件</h4><ol>
+<li>load</li>
+<li>resize</li>
+<li>scroll</li>
+</ol>
+<h4 id="焦点事件"><a href="#焦点事件" class="headerlink" title="焦点事件"></a>焦点事件</h4><ol>
+<li>focus</li>
+<li>blur</li>
+<li>focusin =&gt; 等价focus，但是它会冒泡</li>
+<li>blurout =&gt; 等价blur，但是它会冒泡</li>
+</ol>
+<h4 id="鼠标与滚轮事件"><a href="#鼠标与滚轮事件" class="headerlink" title="鼠标与滚轮事件"></a>鼠标与滚轮事件</h4><ol>
+<li>click</li>
+<li>dbclick</li>
+<li>mousedown</li>
+<li>mouseup</li>
+<li>mouseenter</li>
+<li>mouseleave</li>
+<li>mouseout</li>
+</ol>
+<h4 id="键盘与文本事件"><a href="#键盘与文本事件" class="headerlink" title="键盘与文本事件"></a>键盘与文本事件</h4><ol>
+<li>keydown</li>
+<li>keypress</li>
+<li>keyup</li>
+</ol>
+<h4 id="变动事件"><a href="#变动事件" class="headerlink" title="变动事件"></a>变动事件</h4><ol>
+<li>beforeunload：用户关闭标签页</li>
+<li>DOMContentLoaded：在形成完整DOM树之后会触发，不会理会图像、js、css等资源是否已经下载完毕</li>
+</ol>
+<h4 id="设备事件"><a href="#设备事件" class="headerlink" title="设备事件"></a>设备事件</h4><ol>
+<li>orientationchange：屏幕转动</li>
+</ol>
+<h4 id="触摸与手势事件"><a href="#触摸与手势事件" class="headerlink" title="触摸与手势事件"></a>触摸与手势事件</h4><h5 id="触摸"><a href="#触摸" class="headerlink" title="触摸"></a>触摸</h5><ol>
+<li>touchstart</li>
+<li>touchend</li>
+<li>touchmove</li>
+<li>touchcancel</li>
+</ol>
+<p>🚨 Notice：以上事件event 对象中包含的常见 DOM 属性有：bubbles、cancelable、view、clientX、clientY、screenX、screenY、detail、altKey、shiftKey、ctrlKey 和metaKey。</p>
+<h5 id="手势"><a href="#手势" class="headerlink" title="手势"></a>手势</h5><ol>
+<li>gesturestart：当一根手指在屏幕上，另一根手指有触摸屏幕时</li>
+<li>gesturechange：触摸屏幕的任何一根手指位置发生变化</li>
+<li>gestureend：任何一根手指从屏幕上移开</li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：前端基础知识体系-JS-WEB-API（事件）</li>
+        <li>本文作者：cheng5.du</li>
+        <li>创建时间：2021-05-10 10:11:57</li>
+        <li>
+            本文链接：https://www.duchengwu.top/2021/05/10/前端基础知识体系-JS-WEB-API（事件）/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/05/15/index/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/08/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB-JS-WEB-API(DOM%E3%80%81BOM)/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">前端基础知识体系-JS-WEB-API(DOM、BOM)</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'f5e5a64013254dc350d6',
+                    clientSecret: '6dcc1f868f745192f773d82ab85cdfc62989ca27',
+                    repo: 'blogComments',
+                    owner: 'superFatDu',
+                    admin: ['superFatDu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cheng5.du</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">京ICP备20011198号-1</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="nav-number">1.1.</span> <span class="nav-text">事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM%E7%9B%B4%E6%8E%A5%E7%BB%91%E5%AE%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">DOM直接绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS%E4%B8%AD%E7%BB%91%E5%AE%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">JS中绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.3.</span> <span class="nav-text">绑定事件监听函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E6%98%93%E9%80%9A%E7%94%A8%E7%BB%91%E5%AE%9A%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.4.</span> <span class="nav-text">简易通用绑定函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E6%B5%81"><span class="nav-number">1.2.</span> <span class="nav-text">事件流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7"><span class="nav-number">1.2.1.</span> <span class="nav-text">事件捕获</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="nav-number">1.2.2.</span> <span class="nav-text">事件冒泡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98-%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">事件委托&#x2F;事件代理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.3.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0e"><span class="nav-number">1.3.2.</span> <span class="nav-text">回调函数参数e</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0e-target"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">回调函数参数e.target</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.</span> <span class="nav-text">事件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UI%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.4.1.</span> <span class="nav-text">UI事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%A6%E7%82%B9%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.4.2.</span> <span class="nav-text">焦点事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E4%B8%8E%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.4.3.</span> <span class="nav-text">鼠标与滚轮事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%94%AE%E7%9B%98%E4%B8%8E%E6%96%87%E6%9C%AC%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.4.4.</span> <span class="nav-text">键盘与文本事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E5%8A%A8%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.4.5.</span> <span class="nav-text">变动事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.4.6.</span> <span class="nav-text">设备事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E4%B8%8E%E6%89%8B%E5%8A%BF%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.4.7.</span> <span class="nav-text">触摸与手势事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8"><span class="nav-number">1.4.7.1.</span> <span class="nav-text">触摸</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%8B%E5%8A%BF"><span class="nav-number">1.4.7.2.</span> <span class="nav-text">手势</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
