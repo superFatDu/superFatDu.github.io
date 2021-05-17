@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cheng5.du">
+    
+    <title>
+        
+            前端基础知识体系-JS-WEB-API(存储) |
+        
+        cheng5.du
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#4284f4","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","article_img_align":"left","left_side_width":"260px","content_max_width":"1100px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"人民有信仰，国家有力量，民族有希望。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                cheng5.du
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/netease"
+                            >
+                                网抑云
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/netease">网抑云</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">前端基础知识体系-JS-WEB-API(存储)</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">cheng5.du</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-12 11:14:02
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/">知识体系</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/JS/">JS</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/JS-WEB-API/">JS-WEB-API</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><p>在<a class="link"   target="_blank" rel="noopener" href="https://www.duchengwu.top/2021/02/12/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/" >前端缓存策略<i class="fas fa-external-link-alt"></i></a>中，已经着重讨论过HTTP缓存，这里主要讨论浏览器存储。为了对比cookie，这里会加入session。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5.5j8tmy109680.svg" alt="Front-end Cache"></p>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>储存在用户本地终端上的数据，cookie实际上就是一小段的文本信息。</p>
+<p>客户端请求服务器，如果服务器需要记录该用户状态，就使用response向客户端浏览器颁发一个cookie。客户端浏览器会把cookie保存起来。当浏览器再请求该网站时，浏览器把请求的网址连同该cookie一同提交给服务器。服务器检查该cookie，以此来辨认用户状态。</p>
+<h4 id="cookie机制"><a href="#cookie机制" class="headerlink" title="cookie机制"></a>cookie机制</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210517/cookie%E6%9C%BA%E5%88%B6.6zmb6ee1bow0.jpg" alt="cookie机制"></p>
+<h4 id="cookie属性"><a href="#cookie属性" class="headerlink" title="cookie属性"></a>cookie属性</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210517/cookie%E5%B1%9E%E6%80%A7.4gj2cmj3t0q0.png" alt="cookie属性"></p>
+<h5 id="Name-Value"><a href="#Name-Value" class="headerlink" title="Name/Value"></a>Name/Value</h5><p>cookie的名称和值，比如{ dotcom_user: ‘superFatDu’ }。</p>
+<h5 id="Domain"><a href="#Domain" class="headerlink" title="Domain"></a>Domain</h5><p>决定cookie在哪个域是有效的，也就是决定在向该域发送请求时是否携带此cookie，Domain的设置是对子域生效的。</p>
+<p>如Doamin设置为 .a.com,则b.a.com和c.a.com均可使用该cookie，但如果设置为b.a.com,则c.a.com不可使用该cookie。</p>
+<h5 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h5><p>表示cookie所在的目录，默认在根目录’/‘，所有页面都能访问。</p>
+<p>如果cookie1的path设置为’/test’，cookie2的path设置为’/test/sub’，那么’/test’下的所有页面都能访问cookie1，但’/test’和除’/test/sub’的子页面都不能访问cookie2。</p>
+<h5 id="Expires-Max-Age"><a href="#Expires-Max-Age" class="headerlink" title="Expires/Max-Age"></a>Expires/Max-Age</h5><p>cookie的有效期。</p>
+<p>Expires是该cookie被删除时的时间戳（服务器时间）；Max-age也是cookie的有效期，但它的单位为秒，即多少秒之后失效。</p>
+<h5 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h5><p>cookie的大小。各个浏览器的最大Size不尽相同，大约为4kb左右。</p>
+<p>在所有浏览器中，任何cookie大小超过限制都被忽略，且永远不会被设置。</p>
+<h5 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a>HttpOnly</h5><p>如果cookie中设置了HttpOnly属性为true，那么通过js脚本将无法读取到cookie信息，这样能有效的防止XSS攻击，窃取cookie内容，这样就增加了cookie的安全性，即便是这样，也不要将重要信息存入cookie。</p>
+<h5 id="Secure"><a href="#Secure" class="headerlink" title="Secure"></a>Secure</h5><p>cookie的安全属性，若设置为true，则浏览器只会在HTTPS和SSL等安全协议中传输此cookie，不会在不安全的HTTP协议中传输此cookie。</p>
+<h5 id="SameSite"><a href="#SameSite" class="headerlink" title="SameSite"></a>SameSite</h5><p>用来限制第三方 cookie，从而减少安全风险。</p>
+<ol>
+<li>Strict：完全禁止第三方cookie，跨站点时，任何情况下都不会发送cookie。</li>
+<li>Lax：稍稍放宽，大多数情况也是不发送第三方 cookie，但是导航到目标网址的 Get 请求除外。</li>
+<li>None：网站可以选择显式关闭SameSite属性，将其设为None。不过，前提是必须同时设置Secure属性（cookie 只能通过 HTTPS 协议发送），否则无效。</li>
+</ol>
+<h5 id="Priority"><a href="#Priority" class="headerlink" title="Priority"></a>Priority</h5><p>优先级，chrome的提案。当cookie数量超出时，低优先级的cookie会被优先清除。</p>
+<p>属性值：Low、Medium（默认值）、High</p>
+<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>称为“会话控制”，Session对象存储特定用户会话所需的属性及配置信息。</p>
+<p>session是另一种记录客户状态的机制，不同的是cookie保存在客户端浏览器中，而session保存在服务器上。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。</p>
+<h4 id="session机制"><a href="#session机制" class="headerlink" title="session机制"></a>session机制</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210517/session%E6%9C%BA%E5%88%B6.w0xik787i0w.jpg" alt="session机制"></p>
+<h3 id="web-Storage"><a href="#web-Storage" class="headerlink" title="web Storage"></a>web Storage</h3><p>web Storage这里可以分成localStorage和sessionStorage。</p>
+<p>web Storage的概念和cookie相似，但是cookie的大小受限制，而web Storage就是为了更大的容量设计的，大约为5M左右。</p>
+<h4 id="localStorage-amp-sessionStorage"><a href="#localStorage-amp-sessionStorage" class="headerlink" title="localStorage &amp; sessionStorage"></a>localStorage &amp; sessionStorage</h4><ol>
+<li>localStorage：可持久化数据，除非手动删除，否则一直存在。</li>
+<li>sessionStorage：仅在当前窗口关闭之前存在。</li>
+</ol>
+<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><ol>
+<li>setItem()</li>
+<li>getItem()</li>
+<li>removeItem()</li>
+<li>clear()</li>
+</ol>
+<h3 id="cookie与session的区别"><a href="#cookie与session的区别" class="headerlink" title="cookie与session的区别"></a>cookie与session的区别</h3><ol>
+<li>存放位置：cookie客户端浏览器；session服务器。</li>
+<li>安全程度：session比较安全。</li>
+<li>session在一定时间放在服务器上，访问增多，会占用服务器性能，cookie在客户端则不会。</li>
+<li>cookie有大小限制，session则没有。</li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：前端基础知识体系-JS-WEB-API(存储)</li>
+        <li>本文作者：cheng5.du</li>
+        <li>创建时间：2021-05-12 11:14:02</li>
+        <li>
+            本文链接：https://www.duchengwu.top/2021/05/12/前端基础知识体系-JS-WEB-API(存储)/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/11/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB-JS-WEB-API(Ajax)/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">前端基础知识体系-JS-WEB-API(Ajax)</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'f5e5a64013254dc350d6',
+                    clientSecret: '6dcc1f868f745192f773d82ab85cdfc62989ca27',
+                    repo: 'blogComments',
+                    owner: 'superFatDu',
+                    admin: ['superFatDu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cheng5.du</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">京ICP备20011198号-1</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8"><span class="nav-number">1.</span> <span class="nav-text">存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">1.1.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.1.</span> <span class="nav-text">cookie机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie%E5%B1%9E%E6%80%A7"><span class="nav-number">1.1.2.</span> <span class="nav-text">cookie属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Name-Value"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Name&#x2F;Value</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Domain"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Domain</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Path"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Path</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Expires-Max-Age"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">Expires&#x2F;Max-Age</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Size"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">Size</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HttpOnly"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">HttpOnly</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Secure"><span class="nav-number">1.1.2.7.</span> <span class="nav-text">Secure</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SameSite"><span class="nav-number">1.1.2.8.</span> <span class="nav-text">SameSite</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Priority"><span class="nav-number">1.1.2.9.</span> <span class="nav-text">Priority</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session"><span class="nav-number">1.2.</span> <span class="nav-text">session</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#session%E6%9C%BA%E5%88%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">session机制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web-Storage"><span class="nav-number">1.3.</span> <span class="nav-text">web Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage-amp-sessionStorage"><span class="nav-number">1.3.1.</span> <span class="nav-text">localStorage &amp; sessionStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API"><span class="nav-number">1.3.2.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E4%B8%8Esession%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.</span> <span class="nav-text">cookie与session的区别</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
