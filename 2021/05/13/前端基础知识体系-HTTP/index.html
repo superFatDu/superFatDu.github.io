@@ -9,7 +9,7 @@
     
     <title>
         
-            前端基础知识体系-JS-WEB-API(存储) |
+            前端基础知识体系-HTTP |
         
         cheng5.du
     </title>
@@ -169,7 +169,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">前端基础知识体系-JS-WEB-API(存储)</span>
+            <span class="title-hover-animation">前端基础知识体系-HTTP</span>
         </div>
 
         
@@ -185,7 +185,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-05-12 11:14:02
+        <i class="fas fa-edit"></i>&nbsp;2021-05-13 14:46:08
     </span>
     
         <span class="article-categories article-meta-item">
@@ -213,11 +213,7 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/JS/">JS</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/JS-WEB-API/">JS-WEB-API</a>&nbsp;
+                        | <a href="/tags/HTTP/">HTTP</a>&nbsp;
                     </li>
                 
             </ul>
@@ -236,52 +232,33 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><p>在<a class="link"   target="_blank" rel="noopener" href="https://www.duchengwu.top/2021/02/12/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/" >前端缓存策略<i class="fas fa-external-link-alt"></i></a>中，已经着重讨论过HTTP缓存，这里主要讨论浏览器存储。为了对比cookie，这里会加入session。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210427/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5.5j8tmy109680.svg" alt="Front-end Cache"></p>
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>储存在用户本地终端上的数据，cookie实际上就是一小段的文本信息。</p>
-<p>客户端请求服务器，如果服务器需要记录该用户状态，就使用response向客户端浏览器颁发一个cookie。客户端浏览器会把cookie保存起来。当浏览器再请求该网站时，浏览器把请求的网址连同该cookie一同提交给服务器。服务器检查该cookie，以此来辨认用户状态。</p>
-<h4 id="cookie机制"><a href="#cookie机制" class="headerlink" title="cookie机制"></a>cookie机制</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210517/cookie%E6%9C%BA%E5%88%B6.6zmb6ee1bow0.jpg" alt="cookie机制"></p>
-<h4 id="cookie属性"><a href="#cookie属性" class="headerlink" title="cookie属性"></a>cookie属性</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210517/cookie%E5%B1%9E%E6%80%A7.4gj2cmj3t0q0.png" alt="cookie属性"></p>
-<h5 id="Name-Value"><a href="#Name-Value" class="headerlink" title="Name/Value"></a>Name/Value</h5><p>cookie的名称和值，比如{ dotcom_user: ‘superFatDu’ }。</p>
-<h5 id="Domain"><a href="#Domain" class="headerlink" title="Domain"></a>Domain</h5><p>决定cookie在哪个域是有效的，也就是决定在向该域发送请求时是否携带此cookie，Domain的设置是对子域生效的。</p>
-<p>如Doamin设置为 .a.com,则b.a.com和c.a.com均可使用该cookie，但如果设置为b.a.com,则c.a.com不可使用该cookie。</p>
-<h5 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h5><p>表示cookie所在的目录，默认在根目录’/‘，所有页面都能访问。</p>
-<p>如果cookie1的path设置为’/test’，cookie2的path设置为’/test/sub’，那么’/test’下的所有页面都能访问cookie1，但’/test’和除’/test/sub’的子页面都不能访问cookie2。</p>
-<h5 id="Expires-Max-Age"><a href="#Expires-Max-Age" class="headerlink" title="Expires/Max-Age"></a>Expires/Max-Age</h5><p>cookie的有效期。</p>
-<p>Expires是该cookie被删除时的时间戳（服务器时间）；Max-age也是cookie的有效期，但它的单位为秒，即多少秒之后失效。</p>
-<h5 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h5><p>cookie的大小。各个浏览器的最大Size不尽相同，大约为4kb左右。</p>
-<p>在所有浏览器中，任何cookie大小超过限制都被忽略，且永远不会被设置。</p>
-<h5 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a>HttpOnly</h5><p>如果cookie中设置了HttpOnly属性为true，那么通过js脚本将无法读取到cookie信息，这样能有效的防止XSS攻击，窃取cookie内容，这样就增加了cookie的安全性，即便是这样，也不要将重要信息存入cookie。</p>
-<h5 id="Secure"><a href="#Secure" class="headerlink" title="Secure"></a>Secure</h5><p>cookie的安全属性，若设置为true，则浏览器只会在HTTPS和SSL等安全协议中传输此cookie，不会在不安全的HTTP协议中传输此cookie。</p>
-<h5 id="SameSite"><a href="#SameSite" class="headerlink" title="SameSite"></a>SameSite</h5><p>用来限制第三方 cookie，从而减少安全风险。</p>
-<ol>
-<li>Strict：完全禁止第三方cookie，跨站点时，任何情况下都不会发送cookie。</li>
-<li>Lax：稍稍放宽，大多数情况也是不发送第三方 cookie，但是导航到目标网址的 Get 请求除外。</li>
-<li>None：网站可以选择显式关闭SameSite属性，将其设为None。不过，前提是必须同时设置Secure属性（cookie 只能通过 HTTPS 协议发送），否则无效。</li>
+            <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="一些概述"><a href="#一些概述" class="headerlink" title="一些概述"></a>一些概述</h3><h4 id="协议族"><a href="#协议族" class="headerlink" title="协议族"></a>协议族</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210519/%E5%8D%8F%E8%AE%AE%E6%97%8F.67t12xe7dqc0.jpg" alt="协议族"></p>
+<h4 id="TCP-IP分层关系"><a href="#TCP-IP分层关系" class="headerlink" title="TCP/IP分层关系"></a>TCP/IP分层关系</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210519/TCP_IP%E5%88%86%E5%B1%82%E7%AE%A1%E7%90%86.54t88fkfpqo0.svg" alt="TCP_IP分层管理"></p>
+<h4 id="HTTP-域名DNS"><a href="#HTTP-域名DNS" class="headerlink" title="HTTP-域名DNS"></a>HTTP-域名DNS</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210519/%E5%9F%9F%E5%90%8D-DNS.4d5r9wqscuk0.svg" alt="域名DNS"></p>
+<h4 id="TCP-三次握手"><a href="#TCP-三次握手" class="headerlink" title="TCP-三次握手"></a>TCP-三次握手</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210519/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.fkv7jm9382w.svg" alt="三次握手"></p>
+<h4 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP-四次挥手"></a>TCP-四次挥手</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210519/TCP-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.359b88pd8y00.svg" alt="TCP-四次挥手"></p>
+<h4 id="IP-ARP中转"><a href="#IP-ARP中转" class="headerlink" title="IP-ARP中转"></a>IP-ARP中转</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210519/IP-ARP%E4%B8%AD%E8%BD%AC.33p6qwujdxo0.svg" alt="IP-ARP中转"></p>
+<h4 id="HTTP协议关系"><a href="#HTTP协议关系" class="headerlink" title="HTTP协议关系"></a>HTTP协议关系</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210519/%E5%8D%8F%E8%AE%AE%E4%B8%8EHTTP%E5%85%B3%E7%B3%BB.53dqcqqibck0.svg" alt="协议与HTTP关系"></p>
+<h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><p>HTTP是一种不保存状态，即无状态（stateless）协议。协议对于发送过的请求或者响应都不做持久化处理。</p>
+<h3 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h3><ol>
+<li>GET：获取资源</li>
+<li>POST：传输实体主体</li>
+<li>PUT：传输文件（像FTP上传文件；204 No Content）</li>
+<li>HEAD：获取报文首部（确认URI的有效性，资源更新时间等）</li>
+<li>DELETE：删除文件（204 No Content）</li>
+<li>OPTIONS：询问支持的方法</li>
+<li>TRACE：追踪路径</li>
+<li>CONNECT：要求用隧道协议连接代理（要求在代理服务器进行通信时建立隧道，实现用隧道协议进行TCP通信（SSL、TLS））</li>
 </ol>
-<h5 id="Priority"><a href="#Priority" class="headerlink" title="Priority"></a>Priority</h5><p>优先级，chrome的提案。当cookie数量超出时，低优先级的cookie会被优先清除。</p>
-<p>属性值：Low、Medium（默认值）、High</p>
-<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>称为“会话控制”，Session对象存储特定用户会话所需的属性及配置信息。</p>
-<p>session是另一种记录客户状态的机制，不同的是cookie保存在客户端浏览器中，而session保存在服务器上。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。</p>
-<h4 id="session机制"><a href="#session机制" class="headerlink" title="session机制"></a>session机制</h4><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210517/session%E6%9C%BA%E5%88%B6.w0xik787i0w.jpg" alt="session机制"></p>
-<h3 id="web-Storage"><a href="#web-Storage" class="headerlink" title="web Storage"></a>web Storage</h3><p>web Storage这里可以分成localStorage和sessionStorage。</p>
-<p>web Storage的概念和cookie相似，但是cookie的大小受限制，而web Storage就是为了更大的容量设计的，大约为5M左右。</p>
-<h4 id="localStorage-amp-sessionStorage"><a href="#localStorage-amp-sessionStorage" class="headerlink" title="localStorage &amp; sessionStorage"></a>localStorage &amp; sessionStorage</h4><ol>
-<li>localStorage：可持久化数据，除非手动删除，否则一直存在。</li>
-<li>sessionStorage：仅在当前窗口关闭之前存在。</li>
+<h3 id="HTTP持久化连接"><a href="#HTTP持久化连接" class="headerlink" title="HTTP持久化连接"></a>HTTP持久化连接</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/thomson-fred/p/10197456.html" >HTTP长连接–Keep-Alive<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/224595048" >HTTP keep-alive和TCP keepalive的区别，你了解吗？<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="提升传输速率"><a href="#提升传输速率" class="headerlink" title="提升传输速率"></a>提升传输速率</h3><h4 id="内容编码"><a href="#内容编码" class="headerlink" title="内容编码"></a>内容编码</h4><ol>
+<li>gzip(GNU zip)</li>
+<li>compress(UNIX 系统的标准压缩)</li>
+<li>deflate(zlib)</li>
+<li>identily(不进行编码)</li>
 </ol>
-<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><ol>
-<li>setItem()</li>
-<li>getItem()</li>
-<li>removeItem()</li>
-<li>clear()</li>
-</ol>
-<h3 id="cookie与session的区别"><a href="#cookie与session的区别" class="headerlink" title="cookie与session的区别"></a>cookie与session的区别</h3><ol>
-<li>存放位置：cookie客户端浏览器；session服务器。</li>
-<li>安全程度：session比较安全。</li>
-<li>session在一定时间放在服务器上，访问增多，会占用服务器性能，cookie在客户端则不会。</li>
-<li>cookie有大小限制，session则没有。</li>
-</ol>
+<h4 id="分块传输编码"><a href="#分块传输编码" class="headerlink" title="分块传输编码"></a>分块传输编码</h4><p>Chunked Transfer Coding</p>
 
         </div>
 
@@ -289,11 +266,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：前端基础知识体系-JS-WEB-API(存储)</li>
+        <li>本文标题：前端基础知识体系-HTTP</li>
         <li>本文作者：cheng5.du</li>
-        <li>创建时间：2021-05-12 11:14:02</li>
+        <li>创建时间：2021-05-13 14:46:08</li>
         <li>
-            本文链接：https://www.duchengwu.top/2021/05/12/前端基础知识体系-JS-WEB-API(存储)/
+            本文链接：https://www.duchengwu.top/2021/05/13/前端基础知识体系-HTTP/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -310,13 +287,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/05/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB-HTTP/"
+                           href="/2021/05/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">前端基础知识体系-HTTP</span>
+                                <span class="post-nav-title-item">前端基础知识体系-运行环境</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -326,10 +303,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/05/11/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB-JS-WEB-API(Ajax)/"
+                           href="/2021/05/12/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB-JS-WEB-API(%E5%AD%98%E5%82%A8)/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">前端基础知识体系-JS-WEB-API(Ajax)</span>
+                                <span class="post-nav-title-item">前端基础知识体系-JS-WEB-API(存储)</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -501,7 +478,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8"><span class="nav-number">1.</span> <span class="nav-text">存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">1.1.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.1.</span> <span class="nav-text">cookie机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie%E5%B1%9E%E6%80%A7"><span class="nav-number">1.1.2.</span> <span class="nav-text">cookie属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Name-Value"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Name&#x2F;Value</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Domain"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Domain</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Path"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Path</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Expires-Max-Age"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">Expires&#x2F;Max-Age</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Size"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">Size</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HttpOnly"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">HttpOnly</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Secure"><span class="nav-number">1.1.2.7.</span> <span class="nav-text">Secure</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SameSite"><span class="nav-number">1.1.2.8.</span> <span class="nav-text">SameSite</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Priority"><span class="nav-number">1.1.2.9.</span> <span class="nav-text">Priority</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session"><span class="nav-number">1.2.</span> <span class="nav-text">session</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#session%E6%9C%BA%E5%88%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">session机制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web-Storage"><span class="nav-number">1.3.</span> <span class="nav-text">web Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage-amp-sessionStorage"><span class="nav-number">1.3.1.</span> <span class="nav-text">localStorage &amp; sessionStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API"><span class="nav-number">1.3.2.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E4%B8%8Esession%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.</span> <span class="nav-text">cookie与session的区别</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">一些概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE%E6%97%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">协议族</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP%E5%88%86%E5%B1%82%E5%85%B3%E7%B3%BB"><span class="nav-number">1.1.2.</span> <span class="nav-text">TCP&#x2F;IP分层关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-%E5%9F%9F%E5%90%8DDNS"><span class="nav-number">1.1.3.</span> <span class="nav-text">HTTP-域名DNS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">1.1.4.</span> <span class="nav-text">TCP-三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">1.1.5.</span> <span class="nav-text">TCP-四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP-ARP%E4%B8%AD%E8%BD%AC"><span class="nav-number">1.1.6.</span> <span class="nav-text">IP-ARP中转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP%E5%8D%8F%E8%AE%AE%E5%85%B3%E7%B3%BB"><span class="nav-number">1.1.7.</span> <span class="nav-text">HTTP协议关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E6%8C%81%E4%B9%85%E5%8C%96%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.4.</span> <span class="nav-text">HTTP持久化连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8D%87%E4%BC%A0%E8%BE%93%E9%80%9F%E7%8E%87"><span class="nav-number">1.5.</span> <span class="nav-text">提升传输速率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E7%BC%96%E7%A0%81"><span class="nav-number">1.5.1.</span> <span class="nav-text">内容编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E4%BC%A0%E8%BE%93%E7%BC%96%E7%A0%81"><span class="nav-number">1.5.2.</span> <span class="nav-text">分块传输编码</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
