@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cheng5.du">
+    
+    <title>
+        
+            一些面试题（JavaScript） |
+        
+        cheng5.du
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#4284f4","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","article_img_align":"left","left_side_width":"260px","content_max_width":"1100px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"人民有信仰，国家有力量，民族有希望。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                cheng5.du
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/netease"
+                            >
+                                网抑云
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/netease">网抑云</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">一些面试题（JavaScript）</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">cheng5.du</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-01-01 21:12:42
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/JavaScript/">JavaScript</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><h3 id="下面代码输出什么"><a href="#下面代码输出什么" class="headerlink" title="下面代码输出什么"></a>下面代码输出什么</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">!(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  a = <span class="number">5</span> <span class="comment">// 本身作用域没有定义a，所以相当于定义全局作用域，并赋值5</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.a)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">!(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  a = <span class="number">5</span> <span class="comment">// 本身作用域定义a，所以赋值本身作用域的a = 5</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">20</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.a)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">!(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  a = <span class="number">5</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">20</span></span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;)(a)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">!(<span class="function"><span class="keyword">function</span>(<span class="params">b</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  a = <span class="number">5</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">20</span></span><br><span class="line">  <span class="built_in">console</span>.log(b)</span><br><span class="line">&#125;)(a)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">!(<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a = <span class="number">5</span></span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.a)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">题1</span><br><span class="line">10 =》沿着作用域链，在全局作用域找到10</span><br><span class="line">5 =》this是window，a = 5后，在全局作用域找到5</span><br><span class="line"></span><br><span class="line">题2</span><br><span class="line">undefined =》var a = 20,变量提升，所以打印undefined</span><br><span class="line">10 =》由于a = 5赋值的是局部作用域的变量，所以全局作用域的a = 10</span><br><span class="line"></span><br><span class="line">题3</span><br><span class="line">解析：立即执行函数的参数为a，传入的参数值为10，所以相当于局部作用域的参数a = 10；如果这里不传参数，第一个console.log(a)还是undefined</span><br><span class="line">10 =》a在参数中已经定义，而且执行时传入了10</span><br><span class="line">20 =》var a = 20最后赋值，所以a取到的值为20</span><br><span class="line"></span><br><span class="line">题4</span><br><span class="line">解析：立即执行函数的参数为b，传入的参数为10，所以相当于局部b = 10</span><br><span class="line">undefined =》var a = 20变量提升</span><br><span class="line">10：如上b = 10</span><br><span class="line"></span><br><span class="line">题5</span><br><span class="line">解析：具名自执行函数名：只能在函数内部访问；相当于常量，不可更改。具体如下链接。</span><br><span class="line">ƒ a() &#123;</span><br><span class="line">  a = 5</span><br><span class="line">  console.log(a)</span><br><span class="line">  console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+
+<p><a class="link"   target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000002810093" >在JavaScript的立即执行的具名函数A内修改A的值时到底发生了什么？<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="DOM与虚拟DOM"><a href="#DOM与虚拟DOM" class="headerlink" title="DOM与虚拟DOM"></a>DOM与虚拟DOM</h3><p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55985627" >简单解说DOM和虚拟DOM的区别<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="clientWidth-offsetWidth和clientX-pageX-screenX-offsetX"><a href="#clientWidth-offsetWidth和clientX-pageX-screenX-offsetX" class="headerlink" title="clientWidth/offsetWidth和clientX/pageX/screenX/offsetX"></a>clientWidth/offsetWidth和clientX/pageX/screenX/offsetX</h3><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210603/%E4%BD%8D%E7%BD%AE%E5%85%B3%E7%B3%BB.5260i7hqfug0.svg" alt="clientX/pageX/offsetX和clientWidth/offsetWidth"></p>
+<h4 id="clientWidth-offsetWidth"><a href="#clientWidth-offsetWidth" class="headerlink" title="clientWidth/offsetWidth"></a>clientWidth/offsetWidth</h4><ol>
+<li>clientWidth = content + padding</li>
+<li>offsetWidth = content + padding + border</li>
+</ol>
+<h4 id="clientX-pageX-screenX-offsetX"><a href="#clientX-pageX-screenX-offsetX" class="headerlink" title="clientX/pageX/screenX/offsetX"></a>clientX/pageX/screenX/offsetX</h4><ol>
+<li>clientX：浏览器左侧到点击位置距离</li>
+<li>pageX：clientX + scrollX</li>
+<li>screenX：显示器左侧到点击位置距离</li>
+<li>offsetX：点击元素的左侧到点击位置的距离</li>
+</ol>
+<h3 id="箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用-new-生成实例，那么箭头函数可以吗？为什么？"><a href="#箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用-new-生成实例，那么箭头函数可以吗？为什么？" class="headerlink" title="箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用 new 生成实例，那么箭头函数可以吗？为什么？"></a>箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用 new 生成实例，那么箭头函数可以吗？为什么？</h3><h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ol>
+<li>箭头函数没有 this，它会从自己定义时的执行上下文继承 this（因此无法使用 apply / call / bind 进行绑定 this 值）</li>
+<li>不绑定arguments</li>
+<li>不能使用yield命令，所以箭头函数不能当作Generator函数</li>
+</ol>
+<h4 id="箭头函数不能使用new生成实例"><a href="#箭头函数不能使用new生成实例" class="headerlink" title="箭头函数不能使用new生成实例"></a>箭头函数不能使用new生成实例</h4><ol>
+<li>箭头函数没有 this，它会从自己定义时的执行上下文继承 this（因此无法使用 apply / call / bind 进行绑定 this 值）</li>
+<li>箭头函数没有prototype，无法进行原型链的继承</li>
+</ol>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p>JavaScript内部有两个方法：[[Call]]，[[Construct]]</p>
+<ol>
+<li>正常调用执行使用的是[[Call]]方法</li>
+<li>new调用执行[[Construct]]方法（箭头函数没有[[Construct]]方法，所以不能new生成实例）</li>
+</ol>
+<h3 id="值和引用"><a href="#值和引用" class="headerlink" title="值和引用"></a>值和引用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  x.push(<span class="number">4</span>)</span><br><span class="line">  x = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">  x.push(<span class="number">8</span>)</span><br><span class="line">  <span class="keyword">return</span> x</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;foo(x)&#x27;</span>, foo(a))</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;original a&#x27;</span>, a)</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected output</span></span><br><span class="line"><span class="string">&#x27;foo(x)&#x27;</span> [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line"><span class="string">&#x27;original a&#x27;</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将a当参数传递时，a和x都是[1, 2, 3]的引用</span></span><br><span class="line"><span class="comment">// x.push(4)，a和x的引用都改变为[1, 2, 3, 4]</span></span><br><span class="line"><span class="comment">// x = [5, 6, 7]，x重新赋值意味着x不再是[1, 2, 3, 4]的引用，但a没有改变引用</span></span><br><span class="line"><span class="comment">// x.push(8)，x指向[5, 6, 7, 8]，a还是指向[1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210609/%E5%80%BC%E4%B8%8E%E5%BC%95%E7%94%A8.1lkhiatufxcw.svg" alt="值与引用"></p>
+<p>🚨 Notice：<strong>不能通过引用x来改变引用a的指向，只能修改x和a共同指向的值！！！</strong></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：一些面试题（JavaScript）</li>
+        <li>本文作者：cheng5.du</li>
+        <li>创建时间：2021-01-01 21:12:42</li>
+        <li>
+            本文链接：https://www.duchengwu.top/2021/01/01/一些面试题（JavaScript）/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/01/24/webpack%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">webpack基础配置</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/12/22/npm%E5%8C%85%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">npm包发布流程</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'f5e5a64013254dc350d6',
+                    clientSecret: '6dcc1f868f745192f773d82ab85cdfc62989ca27',
+                    repo: 'blogComments',
+                    owner: 'superFatDu',
+                    admin: ['superFatDu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cheng5.du</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">京ICP备20011198号-1</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E9%9D%A2%E4%BB%A3%E7%A0%81%E8%BE%93%E5%87%BA%E4%BB%80%E4%B9%88"><span class="nav-number">1.1.</span> <span class="nav-text">下面代码输出什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM%E4%B8%8E%E8%99%9A%E6%8B%9FDOM"><span class="nav-number">1.2.</span> <span class="nav-text">DOM与虚拟DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clientWidth-offsetWidth%E5%92%8CclientX-pageX-screenX-offsetX"><span class="nav-number">1.3.</span> <span class="nav-text">clientWidth&#x2F;offsetWidth和clientX&#x2F;pageX&#x2F;screenX&#x2F;offsetX</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#clientWidth-offsetWidth"><span class="nav-number">1.3.1.</span> <span class="nav-text">clientWidth&#x2F;offsetWidth</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clientX-pageX-screenX-offsetX"><span class="nav-number">1.3.2.</span> <span class="nav-text">clientX&#x2F;pageX&#x2F;screenX&#x2F;offsetX</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%8E%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%EF%BC%88function%EF%BC%89%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%88function%EF%BC%89%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-new-%E7%94%9F%E6%88%90%E5%AE%9E%E4%BE%8B%EF%BC%8C%E9%82%A3%E4%B9%88%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E5%90%97%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.4.</span> <span class="nav-text">箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用 new 生成实例，那么箭头函数可以吗？为什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.1.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8new%E7%94%9F%E6%88%90%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.4.2.</span> <span class="nav-text">箭头函数不能使用new生成实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%93%E5%B1%95"><span class="nav-number">1.4.3.</span> <span class="nav-text">拓展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%BC%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-number">1.5.</span> <span class="nav-text">值和引用</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
