@@ -9,7 +9,7 @@
     
     <title>
         
-            二叉树深度和广度优先遍历 |
+            你知道的Vue Router |
         
         cheng5.du
     </title>
@@ -404,7 +404,7 @@ $menu-bar-line-height = 2.5px;
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">二叉树深度和广度优先遍历</span>
+            <span class="title-hover-animation">你知道的Vue Router</span>
         </div>
 
         
@@ -469,37 +469,36 @@ $menu-bar-line-height = 2.5px;
         
 
         <div class="article-content markdown-body">
-            <h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><blockquote>
-<p>树结构是一种非线性存储结构，存储的是具有“一对多”关系的数据元素的集合。</p>
+            <h2 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue Router"></a>Vue Router</h2><blockquote>
+<p>Vue Router 是 Vue.js 官方的路由管理器。</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210609/%E6%A0%91.6a9nbdfcvdg0.png" alt="树"></p>
-<h3 id="树的节点"><a href="#树的节点" class="headerlink" title="树的节点"></a>树的节点</h3><h4 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h4><p>使用树结构存储的每一个数据元素都称为“节点”。如A就是一个节点。</p>
-<h4 id="树根节点"><a href="#树根节点" class="headerlink" title="树根节点"></a>树根节点</h4><p>简称“根节点”，每一个非空树都有且有一个被称为根的节点，比如A。</p>
-<h4 id="父节点（双亲节点），子节点和兄弟节点"><a href="#父节点（双亲节点），子节点和兄弟节点" class="headerlink" title="父节点（双亲节点），子节点和兄弟节点"></a>父节点（双亲节点），子节点和兄弟节点</h4><ol>
-<li>有子节点的节点为父节点，如A,B,C,D,E,H都是父节点。</li>
-<li>B,C,D是A的子节点；E,F是B的子节点……</li>
-<li>同一父节点的同一层节点是兄弟节点。如B,C,D是兄弟节点。</li>
-</ol>
-<h4 id="叶子结点"><a href="#叶子结点" class="headerlink" title="叶子结点"></a>叶子结点</h4><p>如果节点没有任何子节点，那么此节点称为“叶子节点”。比如K,L,F,G,M,I,J</p>
-<h3 id="度和层次"><a href="#度和层次" class="headerlink" title="度和层次"></a>度和层次</h3><h4 id="度"><a href="#度" class="headerlink" title="度"></a>度</h4><p>对于一个节点，拥有的子树数称为节点的度（Ddgree）。如A的度为3</p>
-<h4 id="层次"><a href="#层次" class="headerlink" title="层次"></a>层次</h4><p>以根节点为第一层，然后子节点为一层，孙子节点为一层，以此类推。如图树有4层。</p>
-<h5 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h5><p>树中节点所在的最大的层数，就是树的深度。如图树的深度为4。</p>
-<h3 id="深度和广度优先遍历"><a href="#深度和广度优先遍历" class="headerlink" title="深度和广度优先遍历"></a>深度和广度优先遍历</h3><p><img src="https://cdn.jsdelivr.net/gh/superFatDu/blogPics@main/20210609/%E5%B9%BF%E5%BA%A6%E6%B7%B1%E5%BA%A6.4g9bfc07kqg0.png" alt="广度深度"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> tree = &#123;</span><br><span class="line">  val: <span class="string">&#x27;a&#x27;</span>,</span><br><span class="line">  children: [</span><br><span class="line">    &#123;</span><br><span class="line">      val: <span class="string">&#x27;b&#x27;</span>,</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          val: <span class="string">&#x27;d&#x27;</span>,</span><br><span class="line">          children: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          val: <span class="string">&#x27;e&#x27;</span>,</span><br><span class="line">          children: []</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      val: <span class="string">&#x27;c&#x27;</span>,</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          val: <span class="string">&#x27;f&#x27;</span>,</span><br><span class="line">          children: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          val: <span class="string">&#x27;g&#x27;</span>,</span><br><span class="line">          children: []</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用概览"><a href="#使用概览" class="headerlink" title="使用概览"></a>使用概览</h3><h4 id="router-js"><a href="#router-js" class="headerlink" title="router.js"></a>router.js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="keyword">import</span> DashBoard <span class="keyword">from</span> <span class="string">&#x27;../views/DashBoard.vue&#x27;</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;HomePage&#x27;</span>,</span><br><span class="line">    component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../views/home.vue&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/dashboard&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;DashBoard&#x27;</span>,</span><br><span class="line">    component: DashBoard,</span><br><span class="line">    children: []</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">&#x27;hash&#x27;</span> || <span class="string">&#x27;history&#x27;</span>,</span><br><span class="line">  base: process.env.BASE_URL,</span><br><span class="line">  routes,</span><br><span class="line">  scrollBehavior (to, <span class="keyword">from</span>, savePosition) &#123;</span><br><span class="line">    <span class="keyword">return</span> savePosition || &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解决重复点击跳转router时报错问题</span></span><br><span class="line"><span class="comment">// Avoided redundant navigation to current location</span></span><br><span class="line"><span class="keyword">const</span> originalPush = VueRouter.prototype.push</span><br><span class="line">VueRouter.prototype.push = <span class="function"><span class="keyword">function</span> <span class="title">push</span> (<span class="params">location</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> originalPush.call(<span class="built_in">this</span>, location).catch(<span class="function"><span class="params">err</span> =&gt;</span> err)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
 
-<h4 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h4><ol>
-<li>输出节点</li>
-<li>遍历children</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dfs = <span class="function"><span class="params">root</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(root.val)</span><br><span class="line">  root.children.forEach(dfs)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="挂载-main-js"><a href="#挂载-main-js" class="headerlink" title="挂载 - main.js"></a>挂载 - main.js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  router</span><br><span class="line">&#125;).$mount(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<h4 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h4><ol>
-<li>新建一个队列</li>
-<li>将队头的数据出队</li>
-<li>将children放进队列</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bfs = <span class="function"><span class="params">root</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> queue = []</span><br><span class="line">  <span class="keyword">while</span>(queue.length) &#123;</span><br><span class="line">    <span class="keyword">const</span> n = queue.shift()</span><br><span class="line">    <span class="built_in">console</span>.log(n.val)</span><br><span class="line">    n.children.forEach(<span class="function"><span class="params">child</span> =&gt;</span> &#123;</span><br><span class="line">      queue.push(child)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="mode选择"><a href="#mode选择" class="headerlink" title="mode选择"></a>mode选择</h3><blockquote>
+<p>默认的是hash模式，我们可以配置成history模式。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mode = options.mode || <span class="string">&#x27;hash&#x27;</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="具体实现类"><a href="#具体实现类" class="headerlink" title="具体实现类"></a>具体实现类</h4><p>参数mode字符串只是一个标记，实际起作用的是history的实现类:</p>
+<p>🚨 Notice：如果是<strong>非浏览器环境</strong>，会<strong>强制</strong>性转换成‘<strong>abstract</strong>’模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (mode) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;hash&#x27;</span>:</span><br><span class="line">    <span class="comment">// fallback：如果浏览器不支持，&#x27;history&#x27;模式回滚回&#x27;hash&#x27;</span></span><br><span class="line">    <span class="comment">// this.fallback = mode === &#x27;history&#x27; &amp;&amp; !supportsPushState</span></span><br><span class="line">    <span class="comment">// if (this.fallback) mode = &#x27;hash&#x27;</span></span><br><span class="line">    <span class="built_in">this</span>.history = <span class="keyword">new</span> HashHistory(<span class="built_in">this</span>, options.base, <span class="built_in">this</span>.fallback)</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;history&#x27;</span>:</span><br><span class="line">    <span class="built_in">this</span>.history = <span class="keyword">new</span> HTML5History(<span class="built_in">this</span>, options.base)</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;abstract&#x27;</span>:</span><br><span class="line">    <span class="built_in">this</span>.history = <span class="keyword">new</span> AbstractHistory(<span class="built_in">this</span>, options.base)</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span>) &#123;</span><br><span class="line">      assert(<span class="literal">false</span>, <span class="string">`invalid mode: <span class="subst">$&#123;mode&#125;</span>`</span>)</span><br><span class="line">    &#125;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="push-replace-onReady"><a href="#push-replace-onReady" class="headerlink" title="push()/replace()/onReady()"></a>push()/replace()/onReady()</h4><p>VueRouter类中暴露出来的这些方法，其实只是一个代理，实际调用的是具体的this.history对象的对应方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">push (location: RawLocation, onComplete?: Funciton, onAbort?: <span class="built_in">Function</span>) &#123;</span><br><span class="line">  <span class="built_in">this</span>.history.push(location, onComplete, onAbort)</span><br><span class="line">&#125;</span><br><span class="line">replace (location: RawLocation, onComplete?: Funciton, onAbort?: <span class="built_in">Function</span>) &#123;</span><br><span class="line">  <span class="built_in">this</span>.history.replace(location, onComplete, onAbort)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h4><p>利用URL中的hash(#)，例如：<a class="link"   target="_blank" rel="noopener" href="http://www.test.com/#/test" >www.test.com/#/test<i class="fas fa-external-link-alt"></i></a></p>
+<h5 id="hash特点"><a href="#hash特点" class="headerlink" title="hash特点"></a>hash特点</h5><ol>
+<li>hash虽然出现在URL中，但<strong>不会包括在HTTP请求中</strong>，它是用来<strong>指导浏览器动作</strong>的，对服务器端无用，因此，<strong>hash改变不会重新加载页面</strong>。</li>
+<li>每一次<strong>改变hash</strong>（window.location.hash），都会在浏览器的<strong>访问历史中新增一条记录</strong>。</li>
+</ol>
+<p>利用以上特点，实现前端路由“更新视图但不重新加载页面”。</p>
+<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><p>利用HTML5 History interface新增的方法。（pushState()/replaceState()）</p>
+<p>例如：<a class="link"   target="_blank" rel="noopener" href="http://www.test.com/test" >www.test.com/test<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.history.pushState(stateObj, title, URL)</span><br><span class="line"><span class="built_in">window</span>.history.replaceState(stateObj, title, URL)</span><br></pre></td></tr></table></figure>
+
+<h5 id="history特点"><a href="#history特点" class="headerlink" title="history特点"></a>history特点</h5><h3 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h3>
         </div>
 
         
@@ -551,29 +550,14 @@ $menu-bar-line-height = 2.5px;
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/06/05/%E4%BD%A0%E7%9F%A5%E9%81%93%E7%9A%84Vuex/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">你知道的Vuex</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/05/22/%E6%B8%85%E7%A9%BA%E6%95%B0%E7%BB%84%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"
+                           href="/2021/06/05/%E4%BD%A0%E7%9F%A5%E9%81%93%E7%9A%84Vuex/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">清空数组的几种方法</span>
+                                <span class="post-nav-title-item">你知道的Vuex</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
