@@ -103,7 +103,7 @@ theme: keep
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://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@github.com/superFatDu/superFatDu.github.io
+  repo: https://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@github.com/superFatDu/superFatDu.github.io
   #repo: https://gitee.com/duchengwu/duchengwu.git
   #repo: https://e.coding.net/cHeNg5_Du/cheng5/cheng5.coding.io.git
   branch: main
